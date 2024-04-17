@@ -1,0 +1,5 @@
+#Creating a virtual environment: conda create -n DLproj python=3.11 
+#command for pip installation for all the packages in this file:
+#pip install -r requirements.txt
+
+numpy
