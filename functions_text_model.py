@@ -35,9 +35,9 @@ def train_epoch(model, optimizer, criterion, metrics, dataloader, device):
     Returns:
     -------
     epoch_loss: float
-        The average loss over the epoch.
+        The calculated loss of the epoch.
     epoch_metrics: dict
-        The average metrics over the epoch."""
+        The calculated metrics including the accuracy and the f1 score of the epoch."""
 
     model.train()  # Set the model to training mode
     epoch_loss = 0
@@ -105,9 +105,9 @@ def evaluate(model, criterion, metrics, dataloader, device):
     Returns:
     -------
     epoch_loss: float
-        The average loss over the dataloader.
+        The loss of the model.
     epoch_metrics: dict
-        The average metrics over the dataloader."""
+        The metrics including the accuracy and the f1 score of the model."""
 
     model.eval()  # Set the model to evaluation mode
     epoch_loss = 0
@@ -173,9 +173,23 @@ def plot_training(train_loss, test_loss, metrics_names, train_metrics_logs, test
     plt.show()
 
 
-
-#actually you have to use validation for each step of training, but now we will focus only on the toy example and will track the perfromance on test
 def update_metrics_log(metrics_names, metrics_log, new_metrics_dict):
+    """This function updates the metrics log with the new metrics.
+    
+    Parameters:
+    ----------
+    metrics_names: list
+        The names of the metrics.
+    metrics_log: list
+        The metrics log to update.
+    new_metrics_dict: dict
+        The new metrics to add to the log.
+    
+    Returns:
+    -------
+    metrics_log: list
+        The updated metrics log."""
+    
     for i in range(len(metrics_names)):
         curr_metric_name = metrics_names[i]
         metrics_log[i].append(new_metrics_dict[curr_metric_name])
@@ -183,6 +197,34 @@ def update_metrics_log(metrics_names, metrics_log, new_metrics_dict):
 
 
 def train_cycle(model, optimizer, criterion, metrics, train_loader, test_loader, n_epochs, device):
+    """This function trains the model for the given number of epochs and returns the training and test metrics.
+
+    Parameters:
+    ----------
+    model: torch model
+        The model to train.
+    optimizer: torch optimizer
+        The optimizer to use for training.
+    criterion: torch loss
+        The loss function to use for training.
+    metrics: dict 
+        The metrics to compute during training.
+    train_loader: torch dataloader
+        The dataloader to train the model on.
+    test_loader: torch dataloader
+        The dataloader to evaluate the model on.
+    n_epochs: int
+        The number of epochs to train the model.
+    device: str 
+        The device to use for training.
+        
+    Returns:
+    -------
+    train_metrics_log: list
+        The training metrics of the model.
+    test_metrics_log: list
+        The test metrics of the model."""
+
     train_loss_log,  test_loss_log = [], []
     metrics_names = list(metrics.keys())
     train_metrics_log = [[] for i in range(len(metrics))]
@@ -207,7 +249,35 @@ def train_cycle(model, optimizer, criterion, metrics, train_loader, test_loader,
 
 
 def f1(preds, target):
+    """This function computes the f1 score of the model.
+    
+    Parameters:
+    ----------
+    preds: list
+        The predictions of the model.
+    target: list
+        The target values of the model.
+        
+    Returns:
+    -------
+    f1_score: float
+        The f1 score of the model."""
+    
     return f1_score(target, preds, average='macro')
 
 def acc(preds, target):
+    """This function computes the accuracy of the model.
+
+    Parameters:
+    ----------
+    preds: list
+        The predictions of the model.
+    target: list
+        The target values of the model.
+
+    Returns:
+    -------
+    accuracy: float
+        The accuracy of the model."""
+    
     return accuracy_score(target, preds)

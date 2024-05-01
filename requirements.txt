@@ -8,3 +8,5 @@ torch
 transformers
 matplotlib
 scikit-learn
+jsons
+IPython
