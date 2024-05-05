@@ -10,3 +10,5 @@ matplotlib
 scikit-learn
 jsons
 IPython
+torchaudio
+librosa
