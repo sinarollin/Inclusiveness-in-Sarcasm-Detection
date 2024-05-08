@@ -1,6 +1,6 @@
 #Authors: Céline Hirsch, Sandra Frey, Sina Röllin
 
-# This file contains the functions to train and evaluate the text model that is based on the BERT model.
+# This file contains the functions to train and evaluate the audio model that is based on the BERT model.
 # The functions can be used to train the model, evaluate it.
 
 
