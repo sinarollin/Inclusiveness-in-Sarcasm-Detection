@@ -41,7 +41,7 @@ def train_epoch(model, optimizer, criterion, metrics, dataloader, device):
 
     model.train()  # Set the model to training mode
     epoch_loss = 0
-    epoch_metrics = dict(zip(metrics.keys(), [0]*len(metrics)))
+    epoch_metrics = dict(zip(metrics.keys(), torch.zeros(len(metrics))))
 
     for batch in tqdm(dataloader):
         # Move batch to device
@@ -60,11 +60,14 @@ def train_epoch(model, optimizer, criterion, metrics, dataloader, device):
         # Backward pass
         loss.backward()
 
+        torch.nn.utils.clip_grad_norm_(model.parameters(), 1)   # clip_grad_norm  = 1
+
         # Update the weights
         optimizer.step()
 
         # Get the predictions
-        preds = torch.argmax(outputs.logits, dim=1)
+        with torch.no_grad():
+            preds = torch.argmax(outputs.logits, dim=1)
 
         # Compute metrics
         for k in epoch_metrics.keys():
