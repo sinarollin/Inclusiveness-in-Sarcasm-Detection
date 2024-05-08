@@ -12,3 +12,5 @@ jsons
 IPython
 torchaudio
 librosa
+moviepy
+fairseq
