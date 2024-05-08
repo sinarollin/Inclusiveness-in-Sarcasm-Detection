@@ -1,3 +1,8 @@
+#utterances final for audio
+*.mp4
+*.wav
+
+
 #DEEP LEARNING MODELS
 *.pth
 
