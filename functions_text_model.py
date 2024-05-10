@@ -54,6 +54,17 @@ def train_epoch(model, optimizer, criterion, metrics, dataloader, device):
     epoch_loss = 0
     epoch_metrics = dict(zip(metrics.keys(), torch.zeros(len(metrics))))
 
+    """
+    # Custom optimizer step to add L1 regularization (add # if we want to remove)
+    
+    l1_lambda = 0.001  
+    def l1_regularization(model, l1_lambda):
+        l1_reg = torch.tensor(0.0, requires_grad=True)
+        for param in model.parameters():
+            l1_reg = l1_reg + torch.norm(param, p=1)
+        return l1_lambda * l1_reg
+    """
+
     for batch in tqdm(dataloader):
         # Move batch to device
         input_ids = batch[0].to(device)
@@ -66,7 +77,7 @@ def train_epoch(model, optimizer, criterion, metrics, dataloader, device):
         outputs = model(input_ids, attention_mask=attention_mask)
 
         # Compute loss
-        loss = criterion(outputs.logits, labels) #+ l1_regularization(model, l1_lambda)
+        loss = criterion(outputs.logits, labels)
 
         # Backward pass
         loss.backward()
