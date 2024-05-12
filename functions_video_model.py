@@ -4,21 +4,25 @@ from sklearn.metrics import f1_score, accuracy_score
 from tqdm import tqdm
 import matplotlib.pyplot as plt
 from IPython.display import clear_output
+import cv2
 
-def train_epoch(model, optimizer, criterion, metrics, dataloader, device):
-    model.train()  
-    epoch_loss = 0
-    epoch_metrics = dict(zip(metrics.keys(), torch.zeros(len(metrics))))
+# Training function for 1 epoch
+def train_epoch(model, dataloader, criterion, optimizer, device):
+    model.train()
+    running_loss = 0.0
+    correct_preds = 0
+    total_preds = 0
 
-    for batch in tqdm(dataloader):
+    for inputs, labels in dataloader:
+
         # Move batch to device
-        video_features = batch[0].to(device)
-        labels = batch[1].to(device)
+        inputs = inputs.to(device)
+        labels = labels.to(device)
 
-        optimizer.zero_grad()  
+        optimizer.zero_grad()
 
         # Forward pass
-        outputs = model(video_features)
+        outputs = model(inputs)
 
         # Compute loss 
         loss = criterion(outputs, labels) 
@@ -29,71 +33,110 @@ def train_epoch(model, optimizer, criterion, metrics, dataloader, device):
         # Update the weights
         optimizer.step()
 
-        # Get the predictions
-        with torch.no_grad():
-            preds = torch.argmax(outputs, dim=1)
+        # Add the loss to the epoch loss
+        running_loss += loss.item()
 
-        # Compute metrics
-        for k in epoch_metrics.keys():
-            epoch_metrics[k] += metrics[k](preds.cpu().numpy(), labels.cpu().numpy())
+        _, preds = torch.max(outputs, 1)
+        correct_preds += torch.sum(preds == labels).item()
+        total_preds += labels.size(0)
 
-        # Add the loss to the epoch loss  
-        epoch_loss += loss.item()
+    epoch_loss = running_loss / len(dataloader)
+    epoch_acc = correct_preds / total_preds
 
-    epoch_loss /= len(dataloader)
+    print('train Loss: {:.4f}'.format(epoch_loss),
+          ', train Acc: {:.4f}'.format(epoch_acc))
 
-    for k in epoch_metrics.keys():
-        epoch_metrics[k] /= len(dataloader)
-
-    clear_output() 
-    print('train Loss: {:.4f}, '.format(epoch_loss),
-          ', '.join(['{}: {:.4f}'.format(k, epoch_metrics[k]) for k in epoch_metrics.keys()]))
-
-    return epoch_loss, epoch_metrics
+    return epoch_loss, epoch_acc
 
 
-def evaluate(model, criterion, metrics, dataloader, device):
-    model.eval() 
-    epoch_loss = 0
-    epoch_metrics = dict(zip(metrics.keys(), [0]*len(metrics)))
-    epoch_preds = []
-    epoch_labels = []
+
+# Evaluation function for 1 epoch
+def evaluate_model(model, dataloader, criterion, device):
+    model.eval()
+    running_loss = 0.0
+    correct_preds = 0
+    total_preds = 0
 
     with torch.no_grad():
-        for batch in tqdm(dataloader):
+        for inputs, labels in dataloader:
+
             # Move batch to device
-            video_features = batch[0].to(device)
-            labels = batch[1].to(device)
+            inputs = inputs.to(device)
+            labels = labels.to(device)
 
             # Forward pass
-            outputs = model(video_features)
+            outputs = model(inputs)
 
             # Compute loss
             loss = criterion(outputs, labels)
 
-            # Get the predictions
-            preds = torch.argmax(outputs, dim=1)
-
             # Add the loss to the epoch loss  
-            epoch_loss += loss.item()
+            running_loss += loss.item()
 
-            # Add the predictions and labels to the epoch predictions and labels
-            epoch_preds.extend(preds.cpu().numpy())
-            epoch_labels.extend(labels.cpu().numpy())
+            # Get the predictions
+            _, preds = torch.max(outputs, 1)
+            correct_preds += torch.sum(preds == labels).item()
+            total_preds += labels.size(0)
 
-            # Compute metrics
-            for k in epoch_metrics.keys():
-                epoch_metrics[k] += metrics[k](preds.cpu().numpy(), labels.cpu().numpy())
+    epoch_loss = running_loss / len(dataloader)
+    epoch_acc = correct_preds / total_preds
 
-    epoch_loss /= len(dataloader)
+    print('test Loss: {:.4f}'.format(epoch_loss),
+          ', test Acc: {:.4f}'.format(epoch_acc))
 
-    for k in epoch_metrics.keys():
-        epoch_metrics[k] /= len(dataloader)
+    return epoch_loss, epoch_acc
+
+
+
+# Function to extract visual features using I3D
+def extract_video_features(video_path, sample_rate=5):
+    cap = cv2.VideoCapture(video_path)
+    frames = []
+    frame_count = 0
     
-    print('eval Loss: {:.4f}, '.format(epoch_loss),
-          ', '.join(['{}: {:.4f}'.format(k, epoch_metrics[k]) for k in epoch_metrics.keys()]))
+    while cap.isOpened():
+        ret, frame = cap.read()
+        if not ret:
+            break
+        # Only add frame to list every 'sample_rate' frames
+        if frame_count % sample_rate == 0:
+            frame = cv2.resize(frame, (128, 128))  # Resize frame
+            frame = cv2.cvtColor(frame, cv2.COLOR_BGR2RGB)  # Convert BGR to RGB
+            frames.append(frame)
+        frame_count += 1
+    
+    cap.release()
+    
+    video_tensor = torch.tensor(frames, dtype=torch.float32)  # Convert frames to tensor
+    video_tensor = video_tensor.permute(3, 0, 1, 2)  # Should be [C, T, H, W]
+    
+    return video_tensor
 
-    return epoch_loss, epoch_metrics
+
+
+# Function to add padding to the videos
+def custom_collate_fn(batch):
+    videos, labels = zip(*batch)
+    max_frames = max(video.size(1) for video in videos)  # Find the max number of frames
+
+    padded_videos = []
+    for video in videos:
+        padding_needed = max_frames - video.size(1)
+        if padding_needed > 0:
+            pad = torch.zeros((video.shape[0], padding_needed, video.shape[2], video.shape[3]), dtype=video.dtype, device=video.device)
+            padded_video = torch.cat([video, pad], dim=1)
+        else:
+            padded_video = video
+        padded_videos.append(padded_video)
+
+    videos_tensor = torch.stack(padded_videos)  # Stack along a new batch dimension
+    labels_tensor = torch.tensor(labels, dtype=torch.long)
+
+    return videos_tensor, labels_tensor
+
+
+#  ----------------------------------------------------------
+#  ----------------------------------------------------------
 
 def plot_training(train_loss, test_loss, metrics_names, train_metrics_logs, test_metrics_logs):
     fig, ax = plt.subplots(1, len(metrics_names) + 1, figsize=((len(metrics_names) + 1) * 5, 5))
