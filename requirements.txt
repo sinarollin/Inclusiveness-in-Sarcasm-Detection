@@ -17,3 +17,5 @@ librosa
 moviepy
 fairseq
 nltk
+torchvision
+timm

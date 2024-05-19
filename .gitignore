@@ -1,7 +1,7 @@
 #utterances final for audio
 *.mp4
 *.wav
-
+*.npy
 
 #DEEP LEARNING MODELS
 *.pth
