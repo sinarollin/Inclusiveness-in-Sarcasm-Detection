@@ -1,0 +1,44 @@
+{
+    "Mixed model on Female dataset": {
+        "Test loss": 0.6554807871580124,
+        "Test metrics": {
+            "ACC": 0.6732954545454546,
+            "F1-weighted": 0.6523668881490219
+        }
+    },
+    "Mixed model on Male dataset": {
+        "Test loss": 0.4879419037273952,
+        "Test metrics": {
+            "ACC": 0.8157996894409939,
+            "F1-weighted": 0.8133312599368917
+        }
+    },
+    "Female model on Male dataset": {
+        "Test loss": 0.6878958429609027,
+        "Test metrics": {
+            "ACC": 0.5487189440993789,
+            "F1-weighted": 0.529561766331985
+        }
+    },
+    "Female model on Mixed dataset": {
+        "Test loss": 0.6883609805788312,
+        "Test metrics": {
+            "ACC": 0.5446428571428571,
+            "F1-weighted": 0.5321880919350266
+        }
+    },
+    "Male model on Mixed dataset": {
+        "Test loss": 0.48416813356535776,
+        "Test metrics": {
+            "ACC": 0.8191964285714286,
+            "F1-weighted": 0.8172385231732091
+        }
+    },
+    "Male model on Female dataset": {
+        "Test loss": 0.6554807871580124,
+        "Test metrics": {
+            "ACC": 0.6732954545454546,
+            "F1-weighted": 0.6523668881490219
+        }
+    }
+}
