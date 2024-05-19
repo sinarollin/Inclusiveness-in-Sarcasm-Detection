@@ -39,10 +39,32 @@ def train_epoch(model, optimizer, criterion, metrics, dataloader, device):
         The calculated loss of the epoch.
     epoch_metrics: dict
         The calculated metrics including the accuracy and the f1 score of the epoch."""
+    
+    # Specify regularization strength
+    #l1_lambda = 0.001  
 
+    # Custom optimizer step to add L1 regularization
+    """
+    def l1_regularization(model, l1_lambda):
+        l1_reg = torch.tensor(0.0, requires_grad=True)
+        for param in model.parameters():
+            l1_reg = l1_reg + torch.norm(param, p=1)
+        return l1_lambda * l1_reg
+    """
     model.train()  # Set the model to training mode
     epoch_loss = 0
     epoch_metrics = dict(zip(metrics.keys(), torch.zeros(len(metrics))))
+
+    """
+    # Custom optimizer step to add L1 regularization (add # if we want to remove)
+    
+    l1_lambda = 0.001  
+    def l1_regularization(model, l1_lambda):
+        l1_reg = torch.tensor(0.0, requires_grad=True)
+        for param in model.parameters():
+            l1_reg = l1_reg + torch.norm(param, p=1)
+        return l1_lambda * l1_reg
+    """
 
     for batch in tqdm(dataloader):
         # Move batch to device
