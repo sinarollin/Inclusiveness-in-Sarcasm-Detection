@@ -1,7 +1,8 @@
 #Authors: Céline Hirsch, Sandra Frey, Sina Röllin
+#Deep Learning Project: Inclusiveness in Sarcasm Detection
 
-# This file contains the functions to train and evaluate the text model that is based on the BERT model.
-# The functions can be used to train the model, evaluate it.
+# This file contains the functions to train and evaluate the audio model that is based on the Beit model.
+# The functions can be used to train the model, evaluate it and display its metrics.
 
 
 
@@ -43,18 +44,20 @@ def train_epoch(model, optimizer, criterion, metrics, dataloader, device):
     epoch_loss = 0
     epoch_metrics = dict(zip(metrics.keys(), [0]*len(metrics)))
 
+   
     for batch in tqdm(dataloader):
-        # Move batch to device
-        waveform = batch[0].to(device)
-        labels = batch[1].to(device)
+        
+        inputs, labels = batch
+        inputs = inputs.float().to(device)
+        labels = labels.to(device)
 
         optimizer.zero_grad()  # Zero the gradients
 
         # Forward pass
-        outputs = model(waveform)
+        outputs = model(inputs)
 
         # Compute loss
-        loss = criterion(outputs.logits, labels)
+        loss = criterion(outputs, labels)
 
         # Backward pass
         loss.backward()
@@ -63,7 +66,7 @@ def train_epoch(model, optimizer, criterion, metrics, dataloader, device):
         optimizer.step()
 
         # Get the predictions
-        preds = torch.argmax(outputs.logits, dim=1)
+        preds = torch.argmax(outputs, dim=1)
 
         # Compute metrics
         for k in epoch_metrics.keys():
@@ -116,18 +119,19 @@ def evaluate(model, criterion, metrics, dataloader, device):
 
     with torch.no_grad():
         for batch in tqdm(dataloader):
-            # Move batch to device
-            waveform = batch[0].to(device)
-            labels = batch[1].to(device)
+            
+            inputs, labels = batch
+            inputs = inputs.float().to(device) 
+            labels = labels.to(device)
 
             # Forward pass
-            outputs = model(waveform)
+            outputs = model(inputs)
 
             # Compute loss
-            loss = criterion(outputs.logits, labels)
+            loss = criterion(outputs, labels)
 
             # Get the predictions
-            preds = torch.argmax(outputs.logits, dim=1)
+            preds = torch.argmax(outputs, dim=1)
 
             # Add the loss to the epoch loss  
             epoch_loss += loss.item()
