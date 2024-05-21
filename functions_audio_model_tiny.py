@@ -1,285 +1,97 @@
-#Authors: Céline Hirsch, Sandra Frey, Sina Röllin
-#Deep Learning Project: Inclusiveness in Sarcasm Detection
-
-# This file contains the functions to train and evaluate the audio model that is based on the Beit model.
-# The functions can be used to train the model, evaluate it and display its metrics.
 
 
-
-# Importing the necessary libraries
-import numpy as np
-import torch
-from sklearn.metrics import f1_score, accuracy_score
-from tqdm import tqdm
+import tensorflow as tf
 import matplotlib.pyplot as plt
-from IPython.display import clear_output
 
+from tensorflow.keras.metrics import Precision, Recall
 
-def train_epoch(model, optimizer, criterion, metrics, dataloader, device):
-    """This function trains the model for one epoch and returns the loss and metrics.
+def train_cycle(model, optimizer, loss_fn, train_acc_metric, val_acc_metric, train_dataloader, val_dataloader, epochs):
+    train_accs = []
+    val_accs = []
+    train_losses = []
+    val_losses = []
+    train_f1s = []
+    val_f1s = []
 
-    Parameters:
-    ----------
-    model: torch model
-        The model to train.
-    optimizer: torch optimizer
-        The optimizer to use for training.
-    criterion: torch loss
-        The loss function to use for training.
-    metrics: dict
-        The metrics to compute during training.
-    dataloader: torch dataloader
-        The dataloader to train the model on.
-    device: str
-        The device to use for training.
+    precision = Precision()
+    recall = Recall()
 
-    Returns:
-    -------
-    epoch_loss: float
-        The calculated loss of the epoch.
-    epoch_metrics: dict
-        The calculated metrics including the accuracy and the f1 score of the epoch."""
+    for epoch in range(epochs):
+        print("\nStart of epoch %d" % (epoch,))
+        epoch_loss = 0
 
-    model.train()  # Set the model to training mode
-    epoch_loss = 0
-    epoch_metrics = dict(zip(metrics.keys(), [0]*len(metrics)))
+        # Iterate over the batches of the dataset.
+        for step, (x_batch_train, y_batch_train) in enumerate(train_dataloader):
+            with tf.GradientTape() as tape:
+                logits = model(x_batch_train, training=True)
+                loss_value = loss_fn(y_batch_train, logits)
+            grads = tape.gradient(loss_value, model.trainable_weights)
+            optimizer.apply_gradients(zip(grads, model.trainable_weights))
 
-   
-    for batch in tqdm(dataloader):
-        
-        inputs, labels = batch
-        inputs = inputs.float().to(device)
-        labels = labels.to(device)
+            # Update training metric.
+            train_acc_metric.update_state(y_batch_train, logits)
+            precision.update_state(y_batch_train, tf.argmax(logits, axis=-1))
+            recall.update_state(y_batch_train, tf.argmax(logits, axis=-1))
+            epoch_loss += loss_value
 
-        optimizer.zero_grad()  # Zero the gradients
+        train_f1 = 2 * ((precision.result() * recall.result()) / (precision.result() + recall.result() + tf.keras.backend.epsilon()))
+        train_f1s.append(train_f1)
+        train_loss = epoch_loss / len(train_dataloader)
+        train_losses.append(train_loss)
+        train_acc = train_acc_metric.result()
+        train_accs.append(float(train_acc))
+        print("Training acc over epoch: %.4f" % (float(train_acc),))
+        print("Training F1 score over epoch: %.4f" % (float(train_f1),))
+        print("Training loss over epoch: %.4f" % (float(train_loss),))
 
-        # Forward pass
-        outputs = model(inputs)
+        # Run a validation loop at the end of each epoch.
+        val_epoch_loss = 0
+        for x_batch_val, y_batch_val in val_dataloader:
+            val_logits = model(x_batch_val, training=False)
+            val_loss_value = loss_fn(y_batch_val, val_logits)
+            val_epoch_loss += val_loss_value
 
-        # Compute loss
-        loss = criterion(outputs, labels)
-
-        # Backward pass
-        loss.backward()
-
-        # Update the weights
-        optimizer.step()
-
-        # Get the predictions
-        preds = torch.argmax(outputs, dim=1)
-
-        # Compute metrics
-        for k in epoch_metrics.keys():
-            epoch_metrics[k] += metrics[k](preds.cpu().numpy(), labels.cpu().numpy())
-
-        # Add the loss to the epoch loss  
-        epoch_loss += loss.item()
-
-    epoch_loss /= len(dataloader)
-
-    for k in epoch_metrics.keys():
-        epoch_metrics[k] /= len(dataloader)
-
-    clear_output() #clean the prints from previous epochs
-    print('train Loss: {:.4f}, '.format(epoch_loss),
-          ', '.join(['{}: {:.4f}'.format(k, epoch_metrics[k]) for k in epoch_metrics.keys()]))
-
-
-    return epoch_loss, epoch_metrics
-
-
-def evaluate(model, criterion, metrics, dataloader, device):
-    """This function evaluates the model on the given dataloader and returns the loss and metrics.
-    
-    Parameters:
-    ----------
-    model: torch model
-        The model to evaluate.
-    criterion: torch loss
-        The loss function to use for evaluation.
-    metrics: dict
-        The metrics to compute during evaluation.
-    dataloader: torch dataloader
-        The dataloader to evaluate the model on.
-    device: str
-        The device to use for the evaluation.
-        
-    Returns:
-    -------
-    epoch_loss: float
-        The loss of the model.
-    epoch_metrics: dict
-        The metrics including the accuracy and the f1 score of the model."""
-
-    model.eval()  # Set the model to evaluation mode
-    epoch_loss = 0
-    epoch_metrics = dict(zip(metrics.keys(), [0]*len(metrics)))
-    epoch_preds = []
-    epoch_labels = []
-
-    with torch.no_grad():
-        for batch in tqdm(dataloader):
+            # Update val metrics
+            val_acc_metric.update_state(y_batch_val, val_logits)
+            precision.update_state(y_batch_val, tf.argmax(val_logits, axis=-1))
+            recall.update_state(y_batch_val, tf.argmax(val_logits, axis=-1))
             
-            inputs, labels = batch
-            inputs = inputs.float().to(device) 
-            labels = labels.to(device)
+        val_f1 = 2 * ((precision.result() * recall.result()) / (precision.result() + recall.result() + tf.keras.backend.epsilon()))
+        val_f1s.append(val_f1)
+        val_loss = val_epoch_loss / len(val_dataloader)
+        val_losses.append(val_loss)
+        val_acc = val_acc_metric.result()
+        val_accs.append(float(val_acc))
+        print("Validation acc: %.4f" % (float(val_acc),))
+        print("Validation F1 score: %.4f" % (float(val_f1),))
+        print("Validation loss: %.4f" % (float(val_loss),))
 
-            # Forward pass
-            outputs = model(inputs)
+    return train_accs, val_accs, train_losses, val_losses, train_f1s, val_f1s
 
-            # Compute loss
-            loss = criterion(outputs, labels)
 
-            # Get the predictions
-            preds = torch.argmax(outputs, dim=1)
+def plot_metrics(train_accs, val_accs, train_losses, val_losses, train_f1s, val_f1s):
+    epochs = range(len(train_accs))
 
-            # Add the loss to the epoch loss  
-            epoch_loss += loss.item()
+    plt.figure(figsize=(12, 8))
+    plt.subplot(2, 2, 1)
+    plt.plot(epochs, train_accs, label='Training Accuracy')
+    plt.plot(epochs, val_accs, label='Validation Accuracy')
+    plt.legend(loc='lower right')
+    plt.title('Training and Validation Accuracy')
 
-            # Add the predictions and labels to the epoch predictions and labels
-            epoch_preds.extend(preds.cpu().numpy())
-            epoch_labels.extend(labels.cpu().numpy())
+    plt.subplot(2, 2, 2)
+    plt.plot(epochs, train_losses, label='Training Loss')
+    plt.plot(epochs, val_losses, label='Validation Loss')
+    plt.legend(loc='upper right')
+    plt.title('Training and Validation Loss')
 
-            # Compute metrics
-            for k in epoch_metrics.keys():
-                epoch_metrics[k] += metrics[k](preds.cpu().numpy(), labels.cpu().numpy())
+    plt.subplot(2, 2, 3)
+    plt.plot(epochs, train_f1s, label='Training F1 Score')
+    plt.plot(epochs, val_f1s, label='Validation F1 Score')
+    plt.legend(loc='lower right')
+    plt.title('Training and Validation F1 Score')
 
-    epoch_loss /= len(dataloader)
-
-    for k in epoch_metrics.keys():
-        epoch_metrics[k] /= len(dataloader)
     
-    print('eval Loss: {:.4f}, '.format(epoch_loss),
-          ', '.join(['{}: {:.4f}'.format(k, epoch_metrics[k]) for k in epoch_metrics.keys()]))
 
-
-    return epoch_loss, epoch_metrics
-
-
-def plot_training(train_loss, test_loss, metrics_names, train_metrics_logs, test_metrics_logs):
-    fig, ax = plt.subplots(1, len(metrics_names) + 1, figsize=((len(metrics_names) + 1) * 5, 5))
-
-    ax[0].plot(train_loss, c='blue', label='train')
-    ax[0].plot(test_loss, c='orange', label='test')
-    ax[0].set_title('Loss')
-    ax[0].set_xlabel('epoch')
-    ax[0].legend()
-
-    for i in range(len(metrics_names)):
-        ax[i + 1].plot(train_metrics_logs[i], c='blue', label='train')
-        ax[i + 1].plot(test_metrics_logs[i], c='orange', label='test')
-        ax[i + 1].set_title(metrics_names[i])
-        ax[i + 1].set_xlabel('epoch')
-        ax[i + 1].legend()
-
+    plt.tight_layout()
     plt.show()
-
-
-def update_metrics_log(metrics_names, metrics_log, new_metrics_dict):
-    """This function updates the metrics log with the new metrics.
-    
-    Parameters:
-    ----------
-    metrics_names: list
-        The names of the metrics.
-    metrics_log: list
-        The metrics log to update.
-    new_metrics_dict: dict
-        The new metrics to add to the log.
-    
-    Returns:
-    -------
-    metrics_log: list
-        The updated metrics log."""
-    
-    for i in range(len(metrics_names)):
-        curr_metric_name = metrics_names[i]
-        metrics_log[i].append(new_metrics_dict[curr_metric_name])
-    return metrics_log
-
-
-def train_cycle(model, optimizer, criterion, metrics, train_loader, test_loader, n_epochs, device):
-    """This function trains the model for the given number of epochs and returns the training and test metrics.
-
-    Parameters:
-    ----------
-    model: torch model
-        The model to train.
-    optimizer: torch optimizer
-        The optimizer to use for training.
-    criterion: torch loss
-        The loss function to use for training.
-    metrics: dict 
-        The metrics to compute during training.
-    train_loader: torch dataloader
-        The dataloader to train the model on.
-    test_loader: torch dataloader
-        The dataloader to evaluate the model on.
-    n_epochs: int
-        The number of epochs to train the model.
-    device: str 
-        The device to use for training.
-        
-    Returns:
-    -------
-    train_metrics_log: list
-        The training metrics of the model.
-    test_metrics_log: list
-        The test metrics of the model."""
-
-    train_loss_log,  test_loss_log = [], []
-    metrics_names = list(metrics.keys())
-    train_metrics_log = [[] for i in range(len(metrics))]
-    test_metrics_log = [[] for i in range(len(metrics))]
-
-
-    for epoch in range(n_epochs):
-        print("Epoch {0} of {1}".format(epoch, n_epochs))
-        train_loss, train_metrics = train_epoch(model, optimizer, criterion, metrics, train_loader, device)
-
-        test_loss, test_metrics = evaluate(model, criterion, metrics, test_loader, device)
-
-        train_loss_log.append(train_loss)
-        train_metrics_log = update_metrics_log(metrics_names, train_metrics_log, train_metrics)
-
-        test_loss_log.append(test_loss)
-        test_metrics_log = update_metrics_log(metrics_names, test_metrics_log, test_metrics)
-
-        plot_training(train_loss_log, test_loss_log, metrics_names, train_metrics_log, test_metrics_log)
-    return train_metrics_log, test_metrics_log
-
-
-
-def f1(preds, target):
-    """This function computes the f1 score of the model.
-    
-    Parameters:
-    ----------
-    preds: list
-        The predictions of the model.
-    target: list
-        The target values of the model.
-        
-    Returns:
-    -------
-    f1_score: float
-        The f1 score of the model."""
-    
-    return f1_score(target, preds, average='macro')
-
-def acc(preds, target):
-    """This function computes the accuracy of the model.
-
-    Parameters:
-    ----------
-    preds: list
-        The predictions of the model.
-    target: list
-        The target values of the model.
-
-    Returns:
-    -------
-    accuracy: float
-        The accuracy of the model."""
-    
-    return accuracy_score(target, preds)
