@@ -69,7 +69,7 @@ def train_cycle(model, optimizer, loss_fn, train_acc_metric, val_acc_metric, tra
     return train_accs, val_accs, train_losses, val_losses, train_f1s, val_f1s
 
 
-def plot_metrics(train_accs, val_accs, train_losses, val_losses, train_f1s, val_f1s):
+def plot_metrics(train_accs, val_accs, train_losses, val_losses, train_f1s, val_f1s, plot_name):
     epochs = range(len(train_accs))
 
     plt.figure(figsize=(12, 8))
@@ -94,4 +94,5 @@ def plot_metrics(train_accs, val_accs, train_losses, val_losses, train_f1s, val_
     
 
     plt.tight_layout()
-    plt.show()
+    path = 'hyperparameter_tuning/' + plot_name + '.png'
+    plt.savefig(path, format='png')
