@@ -199,6 +199,27 @@ def plot_training(train_loss, test_loss, metrics_names, train_metrics_logs, test
     plt.show()
 
 
+def plot_training_hyperparameters(train_loss, test_loss, metrics_names, train_metrics_logs, test_metrics_logs, filename):
+    fig, ax = plt.subplots(1, len(metrics_names) + 1, figsize=((len(metrics_names) + 1) * 5, 5))
+
+    ax[0].plot(train_loss, c='blue', label='train')
+    ax[0].plot(test_loss, c='orange', label='test')
+    ax[0].set_title('Loss')
+    ax[0].set_xlabel('epoch')
+    ax[0].legend()
+
+    for i in range(len(metrics_names)):
+        ax[i + 1].plot(train_metrics_logs[i], c='blue', label='train')
+        ax[i + 1].plot(test_metrics_logs[i], c='orange', label='test')
+        ax[i + 1].set_title(metrics_names[i])
+        ax[i + 1].set_xlabel('epoch')
+        ax[i + 1].legend()
+
+    plt.tight_layout()
+    plt.savefig(filename)
+    plt.close()
+
+
 def update_metrics_log(metrics_names, metrics_log, new_metrics_dict):
     """This function updates the metrics log with the new metrics.
     
