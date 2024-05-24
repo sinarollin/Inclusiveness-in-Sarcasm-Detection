@@ -103,9 +103,9 @@ def train_epoch(model, optimizer, criterion, metrics, dataloader, device):
     for k in epoch_metrics.keys():
         epoch_metrics[k] /= len(dataloader)
 
-    clear_output() #clean the prints from previous epochs
-    print('train Loss: {:.4f}, '.format(epoch_loss),
-          ', '.join(['{}: {:.4f}'.format(k, epoch_metrics[k]) for k in epoch_metrics.keys()]))
+    #clear_output() #clean the prints from previous epochs
+    # print('train Loss: {:.4f}, '.format(epoch_loss),
+    #       ', '.join(['{}: {:.4f}'.format(k, epoch_metrics[k]) for k in epoch_metrics.keys()]))
 
 
     return epoch_loss, epoch_metrics
@@ -180,8 +180,8 @@ def evaluate(model, criterion, metrics, dataloader, device):
     for k in epoch_metrics.keys():
         epoch_metrics[k] /= len(dataloader)
     
-    print('eval Loss: {:.4f}, '.format(epoch_loss),
-          ', '.join(['{}: {:.4f}'.format(k, epoch_metrics[k]) for k in epoch_metrics.keys()]))
+    # print('eval Loss: {:.4f}, '.format(epoch_loss),
+    #       ', '.join(['{}: {:.4f}'.format(k, epoch_metrics[k]) for k in epoch_metrics.keys()]))
 
 
     return epoch_loss, epoch_metrics
@@ -276,7 +276,10 @@ def train_cycle(model, optimizer, criterion, metrics, train_loader, test_loader,
         test_loss_log.append(test_loss)
         test_metrics_log = update_metrics_log(metrics_names, test_metrics_log, test_metrics)
 
-        plot_training(train_loss_log, test_loss_log, metrics_names, train_metrics_log, test_metrics_log)
+
+        if epoch == n_epochs - 1: #only plot for the last epoch
+            plot_training(train_loss_log, test_loss_log, metrics_names, train_metrics_log, test_metrics_log)
+
     return train_metrics_log, test_metrics_log
 
 
