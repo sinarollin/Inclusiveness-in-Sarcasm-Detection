@@ -1,0 +1,578 @@
+[
+    {
+        "lr": 0.001,
+        "batch_size": 8,
+        "num_epochs": 20,
+        "weight_decay": 0.05,
+        "dropout_prob": 0,
+        "eval_loss": 0.8104553331028331,
+        "eval_metrics": {
+            "ACC": 0.5,
+            "F1-weighted": 0.45369781733418096
+        }
+    },
+    {
+        "lr": 0.001,
+        "batch_size": 8,
+        "num_epochs": 20,
+        "weight_decay": 0.1,
+        "dropout_prob": 0,
+        "eval_loss": 0.7029035687446594,
+        "eval_metrics": {
+            "ACC": 0.5,
+            "F1-weighted": 0.45369781733418096
+        }
+    },
+    {
+        "lr": 0.0001,
+        "batch_size": 8,
+        "num_epochs": 20,
+        "weight_decay": 0.05,
+        "dropout_prob": 0,
+        "eval_loss": 0.8439847904850136,
+        "eval_metrics": {
+            "ACC": 0.75,
+            "F1-weighted": 0.591648755285119
+        }
+    },
+    {
+        "lr": 0.0001,
+        "batch_size": 8,
+        "num_epochs": 20,
+        "weight_decay": 0.1,
+        "dropout_prob": 0,
+        "eval_loss": 0.5581970980221574,
+        "eval_metrics": {
+            "ACC": 0.8181818181818182,
+            "F1-weighted": 0.7218337218337219
+        }
+    },
+    {
+        "lr": 1e-05,
+        "batch_size": 8,
+        "num_epochs": 20,
+        "weight_decay": 0.05,
+        "dropout_prob": 0,
+        "eval_loss": 0.6361550851301714,
+        "eval_metrics": {
+            "ACC": 0.6590909090909091,
+            "F1-weighted": 0.5789518562245834
+        }
+    },
+    {
+        "lr": 1e-05,
+        "batch_size": 8,
+        "num_epochs": 20,
+        "weight_decay": 0.1,
+        "dropout_prob": 0,
+        "eval_loss": 0.5529238121076063,
+        "eval_metrics": {
+            "ACC": 0.7272727272727273,
+            "F1-weighted": 0.5717615717615718
+        }
+    },
+    {
+        "lr": 0.001,
+        "batch_size": 8,
+        "num_epochs": 20,
+        "weight_decay": 0.05,
+        "dropout_prob": 0.1,
+        "eval_loss": 0.7010379487817938,
+        "eval_metrics": {
+            "ACC": 0.5,
+            "F1-weighted": 0.45369781733418096
+        }
+    },
+    {
+        "lr": 0.001,
+        "batch_size": 8,
+        "num_epochs": 20,
+        "weight_decay": 0.1,
+        "dropout_prob": 0.1,
+        "eval_loss": 0.7411016171628778,
+        "eval_metrics": {
+            "ACC": 0.5,
+            "F1-weighted": 0.45369781733418096
+        }
+    },
+    {
+        "lr": 0.0001,
+        "batch_size": 8,
+        "num_epochs": 20,
+        "weight_decay": 0.05,
+        "dropout_prob": 0.1,
+        "eval_loss": 0.7296090077778156,
+        "eval_metrics": {
+            "ACC": 0.8181818181818182,
+            "F1-weighted": 0.7081252081252082
+        }
+    },
+    {
+        "lr": 0.0001,
+        "batch_size": 8,
+        "num_epochs": 20,
+        "weight_decay": 0.1,
+        "dropout_prob": 0.1,
+        "eval_loss": 0.723369449885054,
+        "eval_metrics": {
+            "ACC": 0.7954545454545454,
+            "F1-weighted": 0.7422703559067195
+        }
+    },
+    {
+        "lr": 1e-05,
+        "batch_size": 8,
+        "num_epochs": 20,
+        "weight_decay": 0.05,
+        "dropout_prob": 0.1,
+        "eval_loss": 0.6173489662733945,
+        "eval_metrics": {
+            "ACC": 0.6704545454545454,
+            "F1-weighted": 0.5524465433556341
+        }
+    },
+    {
+        "lr": 1e-05,
+        "batch_size": 8,
+        "num_epochs": 20,
+        "weight_decay": 0.1,
+        "dropout_prob": 0.1,
+        "eval_loss": 0.6183061816475608,
+        "eval_metrics": {
+            "ACC": 0.6590909090909091,
+            "F1-weighted": 0.5048537321264596
+        }
+    },
+    {
+        "lr": 0.001,
+        "batch_size": 16,
+        "num_epochs": 20,
+        "weight_decay": 0.05,
+        "dropout_prob": 0,
+        "eval_loss": 0.7282032668590546,
+        "eval_metrics": {
+            "ACC": 0.4583333333333333,
+            "F1-weighted": 0.4326649958228906
+        }
+    },
+    {
+        "lr": 0.001,
+        "batch_size": 16,
+        "num_epochs": 20,
+        "weight_decay": 0.1,
+        "dropout_prob": 0,
+        "eval_loss": 0.7043685764074326,
+        "eval_metrics": {
+            "ACC": 0.5416666666666666,
+            "F1-weighted": 0.3807091163413003
+        }
+    },
+    {
+        "lr": 0.0001,
+        "batch_size": 16,
+        "num_epochs": 20,
+        "weight_decay": 0.05,
+        "dropout_prob": 0,
+        "eval_loss": 0.5734139140695333,
+        "eval_metrics": {
+            "ACC": 0.84375,
+            "F1-weighted": 0.6361470399806071
+        }
+    },
+    {
+        "lr": 0.0001,
+        "batch_size": 16,
+        "num_epochs": 20,
+        "weight_decay": 0.1,
+        "dropout_prob": 0,
+        "eval_loss": 0.6450088048974673,
+        "eval_metrics": {
+            "ACC": 0.8125,
+            "F1-weighted": 0.6085470085470086
+        }
+    },
+    {
+        "lr": 1e-05,
+        "batch_size": 16,
+        "num_epochs": 20,
+        "weight_decay": 0.05,
+        "dropout_prob": 0,
+        "eval_loss": 0.6196571290493011,
+        "eval_metrics": {
+            "ACC": 0.6770833333333334,
+            "F1-weighted": 0.5279904636426376
+        }
+    },
+    {
+        "lr": 1e-05,
+        "batch_size": 16,
+        "num_epochs": 20,
+        "weight_decay": 0.1,
+        "dropout_prob": 0,
+        "eval_loss": 0.6434862017631531,
+        "eval_metrics": {
+            "ACC": 0.65625,
+            "F1-weighted": 0.5211764081329299
+        }
+    },
+    {
+        "lr": 0.001,
+        "batch_size": 16,
+        "num_epochs": 20,
+        "weight_decay": 0.05,
+        "dropout_prob": 0.1,
+        "eval_loss": 0.696962426106135,
+        "eval_metrics": {
+            "ACC": 0.4583333333333333,
+            "F1-weighted": 0.4326649958228906
+        }
+    },
+    {
+        "lr": 0.001,
+        "batch_size": 16,
+        "num_epochs": 20,
+        "weight_decay": 0.1,
+        "dropout_prob": 0.1,
+        "eval_loss": 0.7170098125934601,
+        "eval_metrics": {
+            "ACC": 0.4583333333333333,
+            "F1-weighted": 0.4326649958228906
+        }
+    },
+    {
+        "lr": 0.0001,
+        "batch_size": 16,
+        "num_epochs": 20,
+        "weight_decay": 0.05,
+        "dropout_prob": 0.1,
+        "eval_loss": 0.7245885152369738,
+        "eval_metrics": {
+            "ACC": 0.7916666666666666,
+            "F1-weighted": 0.6294217563582881
+        }
+    },
+    {
+        "lr": 0.0001,
+        "batch_size": 16,
+        "num_epochs": 20,
+        "weight_decay": 0.1,
+        "dropout_prob": 0.1,
+        "eval_loss": 0.7558683212846518,
+        "eval_metrics": {
+            "ACC": 0.7604166666666666,
+            "F1-weighted": 0.5717378689047693
+        }
+    },
+    {
+        "lr": 1e-05,
+        "batch_size": 16,
+        "num_epochs": 20,
+        "weight_decay": 0.05,
+        "dropout_prob": 0.1,
+        "eval_loss": 0.6209765374660492,
+        "eval_metrics": {
+            "ACC": 0.65625,
+            "F1-weighted": 0.5448472740921253
+        }
+    },
+    {
+        "lr": 1e-05,
+        "batch_size": 16,
+        "num_epochs": 20,
+        "weight_decay": 0.1,
+        "dropout_prob": 0.1,
+        "eval_loss": 0.6492060025533041,
+        "eval_metrics": {
+            "ACC": 0.6145833333333334,
+            "F1-weighted": 0.4706680329868735
+        }
+    },
+    {
+        "lr": 0.001,
+        "batch_size": 32,
+        "num_epochs": 20,
+        "weight_decay": 0.05,
+        "dropout_prob": 0,
+        "eval_loss": 0.861068606376648,
+        "eval_metrics": {
+            "ACC": 0.53125,
+            "F1-weighted": 0.4738401107569464
+        }
+    },
+    {
+        "lr": 0.001,
+        "batch_size": 32,
+        "num_epochs": 20,
+        "weight_decay": 0.1,
+        "dropout_prob": 0,
+        "eval_loss": 0.7109314997990926,
+        "eval_metrics": {
+            "ACC": 0.7291666666666666,
+            "F1-weighted": 0.6595238095238095
+        }
+    },
+    {
+        "lr": 0.0001,
+        "batch_size": 32,
+        "num_epochs": 20,
+        "weight_decay": 0.05,
+        "dropout_prob": 0,
+        "eval_loss": 0.5827635228633881,
+        "eval_metrics": {
+            "ACC": 0.7916666666666666,
+            "F1-weighted": 0.7686853351327035
+        }
+    },
+    {
+        "lr": 0.0001,
+        "batch_size": 32,
+        "num_epochs": 20,
+        "weight_decay": 0.1,
+        "dropout_prob": 0,
+        "eval_loss": 0.6465226660172144,
+        "eval_metrics": {
+            "ACC": 0.7708333333333334,
+            "F1-weighted": 0.7179427634050835
+        }
+    },
+    {
+        "lr": 1e-05,
+        "batch_size": 32,
+        "num_epochs": 20,
+        "weight_decay": 0.05,
+        "dropout_prob": 0,
+        "eval_loss": 0.6670182943344116,
+        "eval_metrics": {
+            "ACC": 0.6527777777777778,
+            "F1-weighted": 0.6178718914621552
+        }
+    },
+    {
+        "lr": 1e-05,
+        "batch_size": 32,
+        "num_epochs": 20,
+        "weight_decay": 0.1,
+        "dropout_prob": 0,
+        "eval_loss": 0.6754998962084452,
+        "eval_metrics": {
+            "ACC": 0.5625,
+            "F1-weighted": 0.3828682287978449
+        }
+    },
+    {
+        "lr": 0.001,
+        "batch_size": 32,
+        "num_epochs": 20,
+        "weight_decay": 0.05,
+        "dropout_prob": 0.1,
+        "eval_loss": 0.955783079067866,
+        "eval_metrics": {
+            "ACC": 0.7256944444444445,
+            "F1-weighted": 0.6774191385956092
+        }
+    },
+    {
+        "lr": 0.001,
+        "batch_size": 32,
+        "num_epochs": 20,
+        "weight_decay": 0.1,
+        "dropout_prob": 0.1,
+        "eval_loss": 0.6897426942984263,
+        "eval_metrics": {
+            "ACC": 0.6979166666666666,
+            "F1-weighted": 0.6585628370974089
+        }
+    },
+    {
+        "lr": 0.0001,
+        "batch_size": 32,
+        "num_epochs": 20,
+        "weight_decay": 0.05,
+        "dropout_prob": 0.1,
+        "eval_loss": 0.7356769442558289,
+        "eval_metrics": {
+            "ACC": 0.75,
+            "F1-weighted": 0.6962508070867205
+        }
+    },
+    {
+        "lr": 0.0001,
+        "batch_size": 32,
+        "num_epochs": 20,
+        "weight_decay": 0.1,
+        "dropout_prob": 0.1,
+        "eval_loss": 0.5965167880058289,
+        "eval_metrics": {
+            "ACC": 0.78125,
+            "F1-weighted": 0.7580870445344129
+        }
+    },
+    {
+        "lr": 1e-05,
+        "batch_size": 32,
+        "num_epochs": 20,
+        "weight_decay": 0.05,
+        "dropout_prob": 0.1,
+        "eval_loss": 0.6627431710561117,
+        "eval_metrics": {
+            "ACC": 0.5694444444444445,
+            "F1-weighted": 0.5010496326285799
+        }
+    },
+    {
+        "lr": 1e-05,
+        "batch_size": 32,
+        "num_epochs": 20,
+        "weight_decay": 0.1,
+        "dropout_prob": 0.1,
+        "eval_loss": 0.6727241277694702,
+        "eval_metrics": {
+            "ACC": 0.5520833333333334,
+            "F1-weighted": 0.3669049296956273
+        }
+    },
+    {
+        "lr": 0.001,
+        "batch_size": 64,
+        "num_epochs": 20,
+        "weight_decay": 0.05,
+        "dropout_prob": 0,
+        "eval_loss": 1.1163296550512314,
+        "eval_metrics": {
+            "ACC": 0.7083333333333333,
+            "F1-weighted": 0.6458260458260459
+        }
+    },
+    {
+        "lr": 0.001,
+        "batch_size": 64,
+        "num_epochs": 20,
+        "weight_decay": 0.1,
+        "dropout_prob": 0,
+        "eval_loss": 0.9982582181692123,
+        "eval_metrics": {
+            "ACC": 0.7083333333333333,
+            "F1-weighted": 0.6692692692692692
+        }
+    },
+    {
+        "lr": 0.0001,
+        "batch_size": 64,
+        "num_epochs": 20,
+        "weight_decay": 0.05,
+        "dropout_prob": 0,
+        "eval_loss": 0.6235943734645844,
+        "eval_metrics": {
+            "ACC": 0.734375,
+            "F1-weighted": 0.6552786552786554
+        }
+    },
+    {
+        "lr": 0.0001,
+        "batch_size": 64,
+        "num_epochs": 20,
+        "weight_decay": 0.1,
+        "dropout_prob": 0,
+        "eval_loss": 0.6662904322147369,
+        "eval_metrics": {
+            "ACC": 0.7317708333333333,
+            "F1-weighted": 0.6451822260145574
+        }
+    },
+    {
+        "lr": 1e-05,
+        "batch_size": 64,
+        "num_epochs": 20,
+        "weight_decay": 0.05,
+        "dropout_prob": 0,
+        "eval_loss": 0.7006600797176361,
+        "eval_metrics": {
+            "ACC": 0.4401041666666667,
+            "F1-weighted": 0.3891241938839193
+        }
+    },
+    {
+        "lr": 1e-05,
+        "batch_size": 64,
+        "num_epochs": 20,
+        "weight_decay": 0.1,
+        "dropout_prob": 0,
+        "eval_loss": 0.6727412641048431,
+        "eval_metrics": {
+            "ACC": 0.6536458333333333,
+            "F1-weighted": 0.5903573550632375
+        }
+    },
+    {
+        "lr": 0.001,
+        "batch_size": 64,
+        "num_epochs": 20,
+        "weight_decay": 0.05,
+        "dropout_prob": 0.1,
+        "eval_loss": 1.2853592336177826,
+        "eval_metrics": {
+            "ACC": 0.71875,
+            "F1-weighted": 0.6338461538461538
+        }
+    },
+    {
+        "lr": 0.001,
+        "batch_size": 64,
+        "num_epochs": 20,
+        "weight_decay": 0.1,
+        "dropout_prob": 0.1,
+        "eval_loss": 1.326061099767685,
+        "eval_metrics": {
+            "ACC": 0.671875,
+            "F1-weighted": 0.6165073316776104
+        }
+    },
+    {
+        "lr": 0.0001,
+        "batch_size": 64,
+        "num_epochs": 20,
+        "weight_decay": 0.05,
+        "dropout_prob": 0.1,
+        "eval_loss": 0.6138086467981339,
+        "eval_metrics": {
+            "ACC": 0.7213541666666667,
+            "F1-weighted": 0.6761681509465555
+        }
+    },
+    {
+        "lr": 0.0001,
+        "batch_size": 64,
+        "num_epochs": 20,
+        "weight_decay": 0.1,
+        "dropout_prob": 0.1,
+        "eval_loss": 0.603416383266449,
+        "eval_metrics": {
+            "ACC": 0.7578125,
+            "F1-weighted": 0.678291533385873
+        }
+    },
+    {
+        "lr": 1e-05,
+        "batch_size": 64,
+        "num_epochs": 20,
+        "weight_decay": 0.05,
+        "dropout_prob": 0.1,
+        "eval_loss": 0.692753940820694,
+        "eval_metrics": {
+            "ACC": 0.53125,
+            "F1-weighted": 0.48008451914393685
+        }
+    },
+    {
+        "lr": 1e-05,
+        "batch_size": 64,
+        "num_epochs": 20,
+        "weight_decay": 0.1,
+        "dropout_prob": 0.1,
+        "eval_loss": 0.6706001460552216,
+        "eval_metrics": {
+            "ACC": 0.6588541666666667,
+            "F1-weighted": 0.5649411622007658
+        }
+    }
+]

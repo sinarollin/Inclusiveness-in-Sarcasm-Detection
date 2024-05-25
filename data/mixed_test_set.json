@@ -1,0 +1,1526 @@
+{
+    "1_6427": {
+        "utterance": "Hmm. That's too bad. We could have spent New Year's Eve waiting for the ball to drop.",
+        "speaker": "PENNY",
+        "context": [
+            "Oh, oh, oh.",
+            "Was he the one who made you eat your arm hair?",
+            "No, but, actually, that was this guy's sister.",
+            "All right, well, what do you think he wants?",
+            "I don't know.",
+            "You know, the holidays are just around the corner.",
+            "Maybe he wants to see if he can lodge the other testicle up there.",
+            "I told you. That was a different guy."
+        ],
+        "context_speakers": [
+            "SHELDON",
+            "SHELDON",
+            "LEONARD",
+            "PENNY",
+            "LEONARD",
+            "SHELDON",
+            "SHELDON",
+            "LEONARD"
+        ],
+        "show": "BBT",
+        "sarcasm": true,
+        "gender": "F"
+    },
+    "1_10495": {
+        "utterance": "And if it turns out you don't... - you and I could live together. - You and... Oh, sure.",
+        "speaker": "AMY",
+        "context": [
+            "Ugh! It's like walking into the Amazon.\nAnd not the good Amazon with one-day shipping.\nThe awful one with birds and snakes.",
+            "You hate the sound of all those keys on his key chain.",
+            "Four keys!\nWho does he think he is, a warden?",
+            "See? Maybe you'll love living alone.",
+            "I don't know. Perhaps."
+        ],
+        "context_speakers": [
+            "SHELDON",
+            "AMY",
+            "SHELDON",
+            "AMY",
+            "SHELDON"
+        ],
+        "show": "BBT",
+        "sarcasm": true,
+        "gender": "F"
+    },
+    "1_11439": {
+        "utterance": "No, you're right, we should do what you do. Have our mom send us pants from the Walmart in Houston.",
+        "speaker": "PENNY",
+        "context": [
+            "This isn't so bad.",
+            "That's easy for you to say. \nYour chair's not facing the lingerie section.",
+            "Boy, that's a lot of panties.",
+            "You guys comfy? This might take a while.",
+            "You know, I don't understand why women insist on making a big production out of buying clothes."
+        ],
+        "context_speakers": [
+            "LEONARD",
+            "SHELDON",
+            "SHELDON",
+            "AMY",
+            "SHELDON"
+        ],
+        "show": "BBT",
+        "sarcasm": true,
+        "gender": "F"
+    },
+    "2_351": {
+        "utterance": "No Rose, she is depressed because Marvel had manners on only once a week",
+        "speaker": "DOROTHY",
+        "context": [
+            "Now PERSON is depressed Rose.",
+            "Do you think she is depressed about Rebecca"
+        ],
+        "context_speakers": [
+            "DOROTHY",
+            "ROSE"
+        ],
+        "show": "GOLDENGIRLS",
+        "sarcasm": true,
+        "gender": "F"
+    },
+    "A2_612": {
+        "utterance": "I do n't know Rose , maybe Marry Poppins has an Italian cousin .",
+        "speaker": "DOROTHY",
+        "context": [
+            "Isn't she happy here?",
+            "I think she will be happy with Gloria",
+            "What about us? Whose gonna keep after us. Make us linguini and tell us story about Cicily."
+        ],
+        "context_speakers": [
+            "ROSE",
+            "DOROTHY",
+            "ROSE"
+        ],
+        "show": "GOLDENGIRLS",
+        "sarcasm": true,
+        "gender": "F"
+    },
+    "A2_390": {
+        "utterance": "No , I am depressed becaues Phillis George left the morning news .",
+        "speaker": "DOROTHY",
+        "context": [
+            "Are you depressed about Glen?"
+        ],
+        "context_speakers": [
+            "ROSE"
+        ],
+        "show": "GOLDENGIRLS",
+        "sarcasm": true,
+        "gender": "F"
+    },
+    "1_70": {
+        "utterance": "I don't think I'll be able to stop thinking about it.",
+        "speaker": "PENNY",
+        "context": [
+            "This is one of my favorite places to kick back after a quest. They have a great house ale.",
+            "Cool tiger.",
+            "Yeah, I've had him since level ten.",
+            "His name is Buttons.",
+            "Anyway, if you had your own game character we could hang out, maybe go on a quest.",
+            "That sounds interesting.",
+            "You'll think about it?"
+        ],
+        "context_speakers": [
+            "HOWARD",
+            "PENNY",
+            "HOWARD",
+            "HOWARD",
+            "HOWARD",
+            "PENNY",
+            "HOWARD"
+        ],
+        "show": "BBT",
+        "sarcasm": true,
+        "gender": "F"
+    },
+    "A1_1987": {
+        "utterance": "When I did n't give my placard , the Department of Water and Power thought I would relish the ambience .",
+        "speaker": "PENNY",
+        "context": [
+            "Hey.",
+            "Hey.",
+            "A little mood lighting, huh?"
+        ],
+        "context_speakers": [
+            "LEONARD",
+            "PENNY",
+            "LEONARD"
+        ],
+        "show": "BBT",
+        "sarcasm": true,
+        "gender": "F"
+    },
+    "2_350": {
+        "utterance": "No Rose, I am nervous because Sonny Bono gets elected mayor of Palm Springs, he is gonna make all the postmens wear leather bell bottoms and a fur vest.",
+        "speaker": "DOROTHY",
+        "context": [
+            "They are ain't here yet",
+            "No, but they should be any minute",
+            "You seem a little nervous.",
+            "Oh you're sure I am",
+            "Are you nervous cause you haven't met Michael's fiancee?"
+        ],
+        "context_speakers": [
+            "BLANCHE",
+            "DOROTHY",
+            "ROSE",
+            "DOROTHY",
+            "ROSE"
+        ],
+        "show": "GOLDENGIRLS",
+        "sarcasm": true,
+        "gender": "F"
+    },
+    "A2_575": {
+        "utterance": "Why ? Because she can sing and play guitar and do both at the same metre ?",
+        "speaker": "PHOEBE",
+        "context": [
+            "Wow! This girl is good.",
+            "Oh-ho yeah! A song with rhyming words. Oo, I never thought of that before.",
+            "I like her."
+        ],
+        "context_speakers": [
+            "JOEY",
+            "PHOEBE",
+            "CHANDLER"
+        ],
+        "show": "FRIENDS",
+        "sarcasm": true,
+        "gender": "F"
+    },
+    "A2_129": {
+        "utterance": "What are these ? Claws ?",
+        "speaker": "DOROTHY",
+        "context": [
+            "Oh Dorothy would please open this jar of nuts for me?",
+            "You couldn't get it open?",
+            "Oh I didn't try. I don't wanna risk cracking a nail."
+        ],
+        "context_speakers": [
+            "BLANCHE",
+            "DOROTHY",
+            "BLANCHE"
+        ],
+        "show": "GOLDENGIRLS",
+        "sarcasm": true,
+        "gender": "F"
+    },
+    "A1_11021": {
+        "utterance": "Same as all of us , getting out of a gondola without underwear .",
+        "speaker": "PENNY",
+        "context": [
+            "So, what are you working on these days?",
+            "I'm studying one-celled organisms to try and find the neurochemicals that lead to the feeling of shame.",
+            "What would a one-celled organism have to be embarrassed about?"
+        ],
+        "context_speakers": [
+            "BERNADETTE",
+            "AMY",
+            "BERNADETTE"
+        ],
+        "show": "BBT",
+        "sarcasm": true,
+        "gender": "F"
+    },
+    "A2_163": {
+        "utterance": "Oh boy , I just ca n't see . It 's too scary !",
+        "speaker": "RACHEL",
+        "context": [
+            "Oh umm, my big scene is coming up. Big scene coming up.",
+            "If you said, \"Big lima bean, bubbling up.\" Would she understand the difference?",
+            "Rach? What are you doing?"
+        ],
+        "context_speakers": [
+            "JOEY",
+            "CHANDLER",
+            "MONICA"
+        ],
+        "show": "FRIENDS",
+        "sarcasm": true,
+        "gender": "F"
+    },
+    "A2_512": {
+        "utterance": "Because it wears a little sunbrella Rose .",
+        "speaker": "DOROTHY",
+        "context": [
+            "It is not a fly Rose",
+            "Spanish fly is not a fly?",
+            "No, it's a beetle.",
+            "They call it a fly but its really a beetle?",
+            "Yes",
+            "How did they know its Spanish?"
+        ],
+        "context_speakers": [
+            "DOROTHY",
+            "ROSE",
+            "DOROTHY",
+            "ROSE",
+            "DOROTHY",
+            "ROSE"
+        ],
+        "show": "GOLDENGIRLS",
+        "sarcasm": true,
+        "gender": "F"
+    },
+    "A1_11006": {
+        "utterance": "Maybe it 's a honorable thing we came here . It 's like a lesson in what not to do .",
+        "speaker": "PENNY",
+        "context": [
+            "Well, if I do well in sales, I could end up making a lot more money than you.",
+            "Not a problem. I grew up with a mother who emasculated my father financially and in every other aspect of his life, so...",
+            "...really, it's what I think love looks like.",
+            "I'll be right back. I'm gonna go check on him."
+        ],
+        "context_speakers": [
+            "PENNY",
+            "LEONARD",
+            "LEONARD",
+            "BERNADETTE"
+        ],
+        "show": "BBT",
+        "sarcasm": true,
+        "gender": "F"
+    },
+    "A1_5880": {
+        "utterance": "When you 're done copping a feel , that goes on my wrist .",
+        "speaker": "AMY",
+        "context": [
+            "Oh, sweetie, guests don't normally wear corsages to a wedding. \nThat's more of a prom thing.",
+            "I never went to my prom. \nMy mom paid my cousin to take me, but he just used the money to buy drugs.",
+            "Put the corsage on her.",
+            "When you're done copping a feel, that goes on my wrist."
+        ],
+        "context_speakers": [
+            "PENNY",
+            "AMY",
+            "PENNY",
+            "LEONARD"
+        ],
+        "show": "BBT",
+        "sarcasm": true,
+        "gender": "F"
+    },
+    "2_505": {
+        "utterance": "To feed the cat Rose.",
+        "speaker": "DOROTHY",
+        "context": [
+            "Your kidney?",
+            "My kidney.",
+            "Why would she need a kidney?"
+        ],
+        "context_speakers": [
+            "DOROTHY",
+            "BLANCHE",
+            "ROSE"
+        ],
+        "show": "GOLDENGIRLS",
+        "sarcasm": true,
+        "gender": "F"
+    },
+    "A2_527": {
+        "utterance": "We thought you were just here for the society . He is a sarcasmoholic Stewart .",
+        "speaker": "MEMBER-GIRL",
+        "context": [
+            "My name's Scott and I am a sarcasmholic.",
+            "Nooo."
+        ],
+        "context_speakers": [
+            "SCOTT",
+            "MEMBER-GIRL"
+        ],
+        "show": "SARCASMOHOLICS",
+        "sarcasm": true,
+        "gender": "F"
+    },
+    "1_8749": {
+        "utterance": "It was very entertaining... despite the glaring story problem.",
+        "speaker": "AMY",
+        "context": [
+            "I enjoyed it. When you told me I was going to be \"losing my virginity,\" I didn't think you meant showing me Raiders of the Lost Ark  for the first time.",
+            "My apologies. I chose my words poorly.\nI should have said you were about to have your world rocked on my couch.",
+            "Anyway, thank you for watching it.\nIt's one of my all-time favorites."
+        ],
+        "context_speakers": [
+            "AMY",
+            "SHELDON",
+            "SHELDON"
+        ],
+        "show": "BBT",
+        "sarcasm": true,
+        "gender": "F"
+    },
+    "A2_315": {
+        "utterance": "I guess you 'd know that , being one of the two of us , though , right ?",
+        "speaker": "RACHEL",
+        "context": [
+            "So. I just thought the two of us should hang out for a bit. I mean, you know, we've never really talked."
+        ],
+        "context_speakers": [
+            "RACHEL"
+        ],
+        "show": "FRIENDS",
+        "sarcasm": true,
+        "gender": "F"
+    },
+    "Aa1_10009": {
+        "utterance": "let the dead valet talk . So , why do you believe that ?",
+        "speaker": "PENNY",
+        "context": [
+            "FYI, we plan on selling out the human race hard.",
+            "In 20 years, who knows what'll happen with any of us?",
+            "I think you and Leonard will be together.",
+            "You do?",
+            "Yeah.\nI think you're the best couple I know.",
+            "That's so sweet.",
+            "What the hell?! Excuse me?",
+            "Ah-da-da-da-da!"
+        ],
+        "context_speakers": [
+            "AMY",
+            "PENNY",
+            "PERSON",
+            "PENNY",
+            "PERSON",
+            "PENNY",
+            "AMY",
+            "PENNY"
+        ],
+        "show": "BBT",
+        "sarcasm": false,
+        "gender": "F"
+    },
+    "2_445": {
+        "utterance": "Okay?",
+        "speaker": "PHOEBE",
+        "context": [
+            "Okay, here's what we're gonna do. Okay, I'm gonna break into this mini-van and put it in neutral. You guys push it forward so Ross can drive out of his spot."
+        ],
+        "context_speakers": [
+            "PHOEBE"
+        ],
+        "show": "FRIENDS",
+        "sarcasm": false,
+        "gender": "F"
+    },
+    "2_232": {
+        "utterance": "Well, umm, my Mom's friend, Phoebe, is actually my birth Mom.",
+        "speaker": "PHOEBE",
+        "context": [
+            "Oh, I'll go out and get you some.",
+            "Really?!",
+            "Nope! Because I'm not your boyfriend. Hey Pheebs, how did it go?"
+        ],
+        "context_speakers": [
+            "CHANDLER",
+            "MONICA",
+            "CHANDLER"
+        ],
+        "show": "FRIENDS",
+        "sarcasm": false,
+        "gender": "F"
+    },
+    "A2_7": {
+        "utterance": "I 've never loved anybody as much as I do_it you .",
+        "speaker": "MONICA",
+        "context": [
+            "You roll another hard eight and we get married here tonight.",
+            "Are you serious?!",
+            "Yes! I love you!"
+        ],
+        "context_speakers": [
+            "CHANDLER",
+            "MONICA",
+            "CHANDLER"
+        ],
+        "show": "FRIENDS",
+        "sarcasm": false,
+        "gender": "F"
+    },
+    "A2_337": {
+        "utterance": "Uh , listen , I want that grilling pan that Joey borrowed the other day .",
+        "speaker": "MONICA",
+        "context": [
+            "How many times have I told you guys, you",
+            "Hi Chandler.",
+            "Hey!"
+        ],
+        "context_speakers": [
+            "CHANDLER",
+            "MONICA",
+            "CHANDLER"
+        ],
+        "show": "FRIENDS",
+        "sarcasm": false,
+        "gender": "F"
+    },
+    "A1_4544": {
+        "utterance": "Yes . In fact , our menses are synchronised . cent . Bernadette tells me you 're planning a girls ' night .",
+        "speaker": "AMY",
+        "context": [
+            "Besides, Penny and I are having a girls' night tonight.",
+            "Girls' night? What does that entail?",
+            "Oh, you know, girls get together, hang out, share girl talk.",
+            "I'm a girl.",
+            "Oh. Well, maybe you can join us. I'll ask Penny.",
+            "No need. Penny and I are very close.",
+            "You are?"
+        ],
+        "context_speakers": [
+            "BERNADETTE",
+            "AMY",
+            "BERNADETTE",
+            "AMY",
+            "BERNADETTE",
+            "AMY",
+            "LEONARD"
+        ],
+        "show": "BBT",
+        "sarcasm": false,
+        "gender": "F"
+    },
+    "2_590": {
+        "utterance": "Yeah, I don't think so Joe.",
+        "speaker": "RACHEL",
+        "context": [
+            "Uhh, well I've got an audition down the street and I spilled sauce all over the front of my shirt.  You got an extra one?",
+            "Yeah, sure. Umm .. here.",
+            "Great.  You got anything that's not"
+        ],
+        "context_speakers": [
+            "JOEY",
+            "RACHEL",
+            "JOEY"
+        ],
+        "show": "FRIENDS",
+        "sarcasm": false,
+        "gender": "F"
+    },
+    "Aa1_7443": {
+        "utterance": "We 've kind of been mired in a five - year experiment .",
+        "speaker": "PENNY",
+        "context": [
+            "in town were starting to say I was a witch.",
+            "Sheldon thinks the approach in this paper might change the way we calculate ferromagnetic hysteresis.",
+            "Oh, it's about time. I hated the old way.",
+            "Hi. I'm Penny.",
+            "Alex.\nUh, do you work with Dr. Hofstadter?",
+            "In a way."
+        ],
+        "context_speakers": [
+            "SHELDON",
+            "PERSON",
+            "PENNY",
+            "PENNY",
+            "PERSON",
+            "PENNY"
+        ],
+        "show": "BBT",
+        "sarcasm": false,
+        "gender": "F"
+    },
+    "2_202": {
+        "utterance": "Yeah?",
+        "speaker": "PHOEBE",
+        "context": [
+            "Uh, okay, Pheebs?",
+            "Yeah?",
+            "Umm, y'know how the other day you were talking about how you didn't get to go to London and how you were kinda feeling left out?"
+        ],
+        "context_speakers": [
+            "JOEY",
+            "PHOEBE",
+            "JOEY"
+        ],
+        "show": "FRIENDS",
+        "sarcasm": false,
+        "gender": "F"
+    },
+    "Aa2_499": {
+        "utterance": "The finish .",
+        "speaker": "PHOEBE",
+        "context": [
+            "Oh, but he was my pig man...how did I not see this?",
+            "Oh! I know! It's because... he's gorgeous, and he's charming, and when he looks at you...",
+            "Ok, Ok, Pheebs..."
+        ],
+        "context_speakers": [
+            "RACHEL",
+            "PHOEBE",
+            "RACHEL"
+        ],
+        "show": "FRIENDS",
+        "sarcasm": false,
+        "gender": "F"
+    },
+    "2_91": {
+        "utterance": "Alright, I'm gonna go pick up a few things for the trip.",
+        "speaker": "MONICA",
+        "context": [
+            "Oh, certainly. That's a combination of Bernoulli's principle and Newton's third law of motion.",
+            "See?",
+            "Yeah, that's the same as \"it has something to do with wind\"."
+        ],
+        "context_speakers": [
+            "PERSON",
+            "MONICA",
+            "CHANDLER"
+        ],
+        "show": "FRIENDS",
+        "sarcasm": false,
+        "gender": "F"
+    },
+    "A2_590": {
+        "utterance": "Yeah , I do n't believe so Joe .",
+        "speaker": "RACHEL",
+        "context": [
+            "Uhh, well I've got an audition down the street and I spilled sauce all over the front of my shirt.  You got an extra one?",
+            "Yeah, sure. Umm .. here.",
+            "Great.  You got anything that's not"
+        ],
+        "context_speakers": [
+            "JOEY",
+            "RACHEL",
+            "JOEY"
+        ],
+        "show": "FRIENDS",
+        "sarcasm": false,
+        "gender": "F"
+    },
+    "A2_232": {
+        "utterance": "Well , umm , my Mom 's friend , Phoebe , is actually my birth Mom .",
+        "speaker": "PHOEBE",
+        "context": [
+            "Oh, I'll go out and get you some.",
+            "Really?!",
+            "Nope! Because I'm not your boyfriend. Hey Pheebs, how did it go?"
+        ],
+        "context_speakers": [
+            "CHANDLER",
+            "MONICA",
+            "CHANDLER"
+        ],
+        "show": "FRIENDS",
+        "sarcasm": false,
+        "gender": "F"
+    },
+    "A2_506": {
+        "utterance": "Oh my God ! ! Ohh , that is it ! I 'm leaving ! You are just a frightful somebody !",
+        "speaker": "RACHEL",
+        "context": [
+            "Oh, I must've said that after you left.",
+            "Said what? Exactly.",
+            "That you enjoyed the occasional drink .. ing binge."
+        ],
+        "context_speakers": [
+            "PERSON",
+            "RACHEL",
+            "PERSON"
+        ],
+        "show": "FRIENDS",
+        "sarcasm": false,
+        "gender": "F"
+    },
+    "1_3649": {
+        "utterance": "Oh, no, no, I said I'm inviting you to come with me to Stan Lee's house.",
+        "speaker": "PENNY",
+        "context": [
+            "Hi. I'm Penny. This is my friend, Sheldon.",
+            "We're not friends at the moment. Depends on how this goes.",
+            "Right, right. Anyway, Sheldon here is a huge fan of yours, and he was supposed to meet you the other day at the comic book store, but he kind of ended up in jail.",
+            "I see. And you thought you'd just come over to my house uninvited?",
+            "You said we were invited."
+        ],
+        "context_speakers": [
+            "PENNY",
+            "SHELDON",
+            "PENNY",
+            "PERSON",
+            "SHELDON"
+        ],
+        "show": "BBT",
+        "sarcasm": false,
+        "gender": "F"
+    },
+    "2_27": {
+        "utterance": "No no, you don't have to fly back, really.",
+        "speaker": "MONICA",
+        "context": [
+            "Yeah, Ross is great. He's uh, he's in a whole other place. No, he's gone."
+        ],
+        "context_speakers": [
+            "MONICA"
+        ],
+        "show": "FRIENDS",
+        "sarcasm": false,
+        "gender": "F"
+    },
+    "2_257": {
+        "utterance": "Oh, hey, look, I found coffee! Okay, let's skedaddle.",
+        "speaker": "PHOEBE",
+        "context": [
+            "Okay, let me just get a cup of coffee.",
+            "Oh Rachel, I know the best coffee house and it's sooo close.",
+            "Closer than here?"
+        ],
+        "context_speakers": [
+            "RACHEL",
+            "MONICA",
+            "RACHEL"
+        ],
+        "show": "FRIENDS",
+        "sarcasm": false,
+        "gender": "F"
+    },
+    "A2_188": {
+        "utterance": "You had no relationship ! !",
+        "speaker": "MONICA",
+        "context": [
+            "I just saw Danny getting on the subway with a girl and he had his arm around her.",
+            "Oh, honey, I'm sorry.",
+            "Well, you should be, this is all your fault! You meddled in our relationship!!"
+        ],
+        "context_speakers": [
+            "RACHEL",
+            "MONICA",
+            "RACHEL"
+        ],
+        "show": "FRIENDS",
+        "sarcasm": false,
+        "gender": "F"
+    },
+    "A2_58": {
+        "utterance": "Why ?",
+        "speaker": "PHOEBE",
+        "context": [
+            "Welcome back!",
+            "Hey!  Can we pick up where we left off?",
+            "I don't know, I'm still pretty tired out from this afternoon."
+        ],
+        "context_speakers": [
+            "PERSON",
+            "PHOEBE",
+            "PERSON"
+        ],
+        "show": "FRIENDS",
+        "sarcasm": false,
+        "gender": "F"
+    },
+    "A2_425": {
+        "utterance": "And did he ?",
+        "speaker": "MONICA",
+        "context": [
+            "We couldn't keep our eyes off each other all night and then every once and a while y'know, he'd kinda lean over and stroke my hair and touch my neck.",
+            "Okay, stop it Phoebe, you're getting me all tingly.",
+            "All I could think of was y'know, \"Is he gonna kiss me? Is he gonna kiss me?\""
+        ],
+        "context_speakers": [
+            "PHOEBE",
+            "MONICA",
+            "PHOEBE"
+        ],
+        "show": "FRIENDS",
+        "sarcasm": false,
+        "gender": "F"
+    },
+    "2_482": {
+        "utterance": "Y'know you, you just stop being such a wuss and get those off and you come with us and watch naked girls dance around!!",
+        "speaker": "PHOEBE",
+        "context": [
+            "No you can't. You don't want to be guys, you'd be all hairy and wouldn't live as long."
+        ],
+        "context_speakers": [
+            "CHANDLER"
+        ],
+        "show": "FRIENDS",
+        "sarcasm": false,
+        "gender": "F"
+    },
+    "Aa2_29": {
+        "utterance": "It was like months ago .",
+        "speaker": "RACHEL",
+        "context": [
+            "Oh, that's Ross's.",
+            "Oh...  Oh my God. He remembered.",
+            "Remembered what?"
+        ],
+        "context_speakers": [
+            "CHANDLER",
+            "RACHEL",
+            "PHOEBE"
+        ],
+        "show": "FRIENDS",
+        "sarcasm": false,
+        "gender": "F"
+    },
+    "2_626": {
+        "utterance": "Cause all I ever get to do now is pregnant stuff, it just bums me out.",
+        "speaker": "PHOEBE",
+        "context": [
+            "All right, y'know what, we've been talking about London too much haven't we?",
+            "I'm sorry. It's just 'cause I couldn't be there."
+        ],
+        "context_speakers": [
+            "CHANDLER",
+            "PHOEBE"
+        ],
+        "show": "FRIENDS",
+        "sarcasm": false,
+        "gender": "F"
+    },
+    "1_7722": {
+        "utterance": "Exactly what it was half an hour ago. It's like you're not even trying to get better.",
+        "speaker": "SHELDON",
+        "context": [
+            "(thermometer beeps) 102.2.\n(coughs)"
+        ],
+        "context_speakers": [
+            "SHELDON"
+        ],
+        "show": "BBT",
+        "sarcasm": true,
+        "gender": "M"
+    },
+    "2_242": {
+        "utterance": "Are you still enjoying your nap?",
+        "speaker": "CHANDLER",
+        "context": [
+            "Okay?",
+            "Hi Emma, it's the year 2020."
+        ],
+        "context_speakers": [
+            "ROSS",
+            "CHANDLER"
+        ],
+        "show": "FRIENDS",
+        "sarcasm": true,
+        "gender": "M"
+    },
+    "1_6020": {
+        "utterance": "You just got off the list. Would you like back on it? This'll just take a moment. It's on a five and a quarter inch floppy.",
+        "speaker": "SHELDON",
+        "context": [
+            "What differences does it make if Leonard goes to Wil Wheaton's party?",
+            "Wil Wheaton is Sheldon's mortal enemy.",
+            "Mortal enemy?",
+            "Mm-hmm. Sheldon, I know you're a bit of a left-handed monkey wrench, but...\nyou really have a mortal enemy?",
+            "In fact, I have 61 of them.",
+            "Would you like to see the list?",
+            "Oh, say no, say no, say no, say no."
+        ],
+        "context_speakers": [
+            "AMY",
+            "PENNY",
+            "AMY",
+            "AMY",
+            "SHELDON",
+            "SHELDON",
+            "PENNY"
+        ],
+        "show": "BBT",
+        "sarcasm": true,
+        "gender": "M"
+    },
+    "1_5699": {
+        "utterance": "Congratulations and welcome temporarily aboard. Here's your I.D. card, your key and your lapel pin. Which Leonard was too cool to wear.",
+        "speaker": "SHELDON",
+        "context": [
+            "And a living will and durable power of attorney.",
+            "This says you can make \"end of life\" decisions for me.",
+            "As your friend, let's hope it doesn't come to that. \nPlease sign.",
+            "Did you sign this?",
+            "There's a reciprocity clause.\nYou get to pull the plug on him, too.",
+            "Well, that seems fair."
+        ],
+        "context_speakers": [
+            "SHELDON",
+            "RAJ",
+            "SHELDON",
+            "RAJ",
+            "LEONARD",
+            "RAJ"
+        ],
+        "show": "BBT",
+        "sarcasm": true,
+        "gender": "M"
+    },
+    "2_260": {
+        "utterance": "Okay, are you aware unagi  is an eel?",
+        "speaker": "CHANDLER",
+        "context": [
+            "Chandler. I sensed it was you.",
+            "What?!",
+            "Unagi. I'm always aware."
+        ],
+        "context_speakers": [
+            "ROSS",
+            "CHANDLER",
+            "ROSS"
+        ],
+        "show": "FRIENDS",
+        "sarcasm": true,
+        "gender": "M"
+    },
+    "2_109": {
+        "utterance": "I thought if I littered, that crying Indian might come by and save us.",
+        "speaker": "CHANDLER",
+        "context": [
+            "Chandler, what are you doing? There is a trash can right there!"
+        ],
+        "context_speakers": [
+            "RACHEL"
+        ],
+        "show": "FRIENDS",
+        "sarcasm": true,
+        "gender": "M"
+    },
+    "2_286": {
+        "utterance": "And sometimes I would want you to steal third, and I'll go like this.",
+        "speaker": "CHANDLER",
+        "context": [
+            "And sometimes I may be away longer, like this. But I'll still always come back, like this."
+        ],
+        "context_speakers": [
+            "ROSS"
+        ],
+        "show": "FRIENDS",
+        "sarcasm": true,
+        "gender": "M"
+    },
+    "1_2616": {
+        "utterance": "Sure, maybe a tableau of me trying to pummel you to death.",
+        "speaker": "LEONARD",
+        "context": [
+            "Of course not. I'm a theoretical physicist.\nA career I chose in no small part because it's indoors, but if I'm able to detect slow-moving magnetic monopoles there, I will be the scientis to confirm string theory.",
+            "People will write books about me.",
+            "Third-graders will create macaroni-art dioramas depicting scenes from my life."
+        ],
+        "context_speakers": [
+            "SHELDON",
+            "SHELDON",
+            "SHELDON"
+        ],
+        "show": "BBT",
+        "sarcasm": true,
+        "gender": "M"
+    },
+    "2_170": {
+        "utterance": "The British are coming?",
+        "speaker": "CHANDLER",
+        "context": [
+            "Hey you guys, guess what?"
+        ],
+        "context_speakers": [
+            "PHOEBE"
+        ],
+        "show": "FRIENDS",
+        "sarcasm": true,
+        "gender": "M"
+    },
+    "2_447": {
+        "utterance": "It was an accident. Not like I was across the street with a telescope and a box of donuts.",
+        "speaker": "CHANDLER",
+        "context": [
+            "Still upset because I saw her boobies.",
+            "Well what? What were you doing seeing her boobies?"
+        ],
+        "context_speakers": [
+            "CHANDLER",
+            "ROSS"
+        ],
+        "show": "FRIENDS",
+        "sarcasm": true,
+        "gender": "M"
+    },
+    "1_1003": {
+        "utterance": "Good idea, sit with her. Hold her, comfort her. And if the moment feels right, see if you can cop a feel.",
+        "speaker": "HOWARD",
+        "context": [
+            "It's smashed beyond repair. What are you gonna do with it?",
+            "What else? Sell it on eBay as \"slightly used.\"",
+            "It was Penny's boyfriend's, they broke up.",
+            "Apparently, he posted intimate details of their physical relationship on his blog which I cannot find anywhere.",
+            "I'm gonna go back and try talking to her again."
+        ],
+        "context_speakers": [
+            "HOWARD",
+            "RAJ",
+            "LEONARD",
+            "HOWARD",
+            "LEONARD"
+        ],
+        "show": "BBT",
+        "sarcasm": true,
+        "gender": "M"
+    },
+    "1_5617": {
+        "utterance": "is an event that's like a heart attack.",
+        "speaker": "SHELDON",
+        "context": [
+            "Yeah, I'm saying, it'd be easier to lift a car.",
+            "What can I tell you? After I found the courage to put her pants back on, I was unstoppable.",
+            "So, how is she?",
+            "They're running tests-- I don't know.",
+            "It may have been a heart attack or heart-attack-like event.",
+            "What's the difference?",
+            "A heart-attack-like event"
+        ],
+        "context_speakers": [
+            "PENNY",
+            "HOWARD",
+            "LEONARD",
+            "HOWARD",
+            "HOWARD",
+            "PENNY",
+            "SHELDON"
+        ],
+        "show": "BBT",
+        "sarcasm": true,
+        "gender": "M"
+    },
+    "2_487": {
+        "utterance": "And Hornswoggle? What? Are you dating a character from \"Fraggle Rock\"? Ahh.",
+        "speaker": "CHANDLER",
+        "context": [
+            "I can't take it any more! So you win, okay? Pheebs? Flying a jet? Better make it a spaceship so that you can get back to your home planet! And Ross, phone call for you today. Tom Jones, he wants his pants back!"
+        ],
+        "context_speakers": [
+            "CHANDLER"
+        ],
+        "show": "FRIENDS",
+        "sarcasm": true,
+        "gender": "M"
+    },
+    "1_8045": {
+        "utterance": "Dumped her? What, did he use a forklift?",
+        "speaker": "RAJ",
+        "context": [
+            "to rebrand the stuff as a cure for constipation.",
+            "Way to make lemonade.\nYou know, from around the corner where fudge is made.",
+            "Hey, I got a favor to ask.",
+            "Sure.",
+            "My mom's been kind of an emotional wreck since that dentist she was dating dumped her."
+        ],
+        "context_speakers": [
+            "HOWARD",
+            "RAJ",
+            "HOWARD",
+            "RAJ",
+            "HOWARD"
+        ],
+        "show": "BBT",
+        "sarcasm": true,
+        "gender": "M"
+    },
+    "2_449": {
+        "utterance": "Oh no, now its not gonna make any sense",
+        "speaker": "CHANDLER",
+        "context": [
+            "Oh Oh car car.",
+            "Its Ross on one of his drives",
+            "What is he doing here?",
+            "He is saving your butt. Unless ofcourse I am stepping on some toes here, in which case I can just mosey on. I have plenty of people to help in the interstate."
+        ],
+        "context_speakers": [
+            "RACHEL",
+            "PHOEBE",
+            "RACHEL",
+            "ROSS"
+        ],
+        "show": "FRIENDS",
+        "sarcasm": true,
+        "gender": "M"
+    },
+    "1_6504": {
+        "utterance": "Oh, I see why you're confused. No, her news sounded important, but what you're forgetting is, it was an achievement in the field of biology. That's all about yucky, squishy things.",
+        "speaker": "SHELDON",
+        "context": [
+            "It's probably a euphemism for urination.",
+            "Sheldon, what is wrong with you?",
+            "Not much. Although, I can be faulted for being overly fond of koala bears.",
+            "I don't know what it is, when they smart munching on eucalyptus, I just melt inside.",
+            "Okay, Amy just told you some exciting news, and you acted like it was no big deal."
+        ],
+        "context_speakers": [
+            "SHELDON",
+            "PENNY",
+            "SHELDON",
+            "SHELDON",
+            "PENNY"
+        ],
+        "show": "BBT",
+        "sarcasm": true,
+        "gender": "M"
+    },
+    "2_532": {
+        "utterance": "The Jamestown colony of Virginia. You see King George is giving us the land, so.",
+        "speaker": "CHANDLER",
+        "context": [
+            "Rach rach, we gotta settle",
+            "Settle what?"
+        ],
+        "context_speakers": [
+            "CHANDLER",
+            "RACHEL"
+        ],
+        "show": "FRIENDS",
+        "sarcasm": true,
+        "gender": "M"
+    },
+    "2_373": {
+        "utterance": "I was making a coconut phone with a professor.",
+        "speaker": "CHANDLER",
+        "context": [
+            "Where the hell have you been?"
+        ],
+        "context_speakers": [
+            "JOEY"
+        ],
+        "show": "FRIENDS",
+        "sarcasm": true,
+        "gender": "M"
+    },
+    "1_2198": {
+        "utterance": "Assuming I can keep up this pace, three hours, 11 minutes. Plus however long it takes to conclude this fairly pointless conversation.",
+        "speaker": "SHELDON",
+        "context": [
+            "See, by attaching RFID tags to my clothing, it will enable my laptop to read and identify the items with this wand.",
+            "I will then cross-reference them against destination, anticipated activity spectrum, weather conditions, duration of trip, et cetera.",
+            "That does sound much simpler.",
+            "How long is this going to take?"
+        ],
+        "context_speakers": [
+            "SHELDON",
+            "SHELDON",
+            "LEONARD",
+            "LEONARD"
+        ],
+        "show": "BBT",
+        "sarcasm": true,
+        "gender": "M"
+    },
+    "2_433": {
+        "utterance": "I was saying the actual words",
+        "speaker": "CHANDLER",
+        "context": [
+            "Well cathy's last boyfriend was Joey.",
+            "And you're afraid you wont be able to fill his shoes"
+        ],
+        "context_speakers": [
+            "CHANDLER",
+            "ROSS"
+        ],
+        "show": "FRIENDS",
+        "sarcasm": true,
+        "gender": "M"
+    },
+    "1_3287": {
+        "utterance": "Oh, sure. And while we're at it, why don't we put our hands behind our backs, have an old-fashioned eating contest?",
+        "speaker": "SHELDON",
+        "context": [
+            "I told my girlfriend Bernadette she could join us for dinner.",
+            "Sure. The more, the merrier.",
+            "Wa- no, that's a false equivalency. More does not equal merry.",
+            "If there were 2,000 people in this apartment right now, would we be celebrating?\nNo, we'd be suffocating.",
+            "Sheldon...",
+            "Don't \"Sheldon\" me. We ordered for five people, not six.",
+            "Oh, come on, it's fine. We'll just put it all on the table, you know, family style."
+        ],
+        "context_speakers": [
+            "HOWARD",
+            "LEONARD",
+            "SHELDON",
+            "SHELDON",
+            "LEONARD",
+            "SHELDON",
+            "PENNY"
+        ],
+        "show": "BBT",
+        "sarcasm": true,
+        "gender": "M"
+    },
+    "2_303": {
+        "utterance": "No thanks Josephine!",
+        "speaker": "CHANDLER",
+        "context": [
+            "Hey Chandler!, come on in we are knitting pot holders."
+        ],
+        "context_speakers": [
+            "JOEY"
+        ],
+        "show": "FRIENDS",
+        "sarcasm": true,
+        "gender": "M"
+    },
+    "1_9009": {
+        "utterance": "- No, no, no. I'm really good at this. All right, give me a hint. Does it involve difficulty initiating a stream of anything?",
+        "speaker": "SHELDON",
+        "context": [
+            "Dr. Jeffries, hello again. Leonard Hofstadter.",
+            "Oh, oh, right, I remember your-your girlfriend.",
+            "Is-Is she... is she here?",
+            "No, she's not.",
+            "So, what prescription are you getting filled?",
+            "- Sheldon.",
+            "No. Wait, I want to guess. Don't tell me.",
+            "I wasn't going to tell you."
+        ],
+        "context_speakers": [
+            "LEONARD",
+            "PERSON",
+            "PERSON",
+            "LEONARD",
+            "SHELDON",
+            "LEONARD",
+            "SHELDON",
+            "PERSON"
+        ],
+        "show": "BBT",
+        "sarcasm": false,
+        "gender": "M"
+    },
+    "2_531": {
+        "utterance": "Yeah well that's because uh .. I stayed in my room. Yeah, you don't want to look in my hamper.",
+        "speaker": "JOEY",
+        "context": [
+            "Yeah, I mean I was up sick all night.",
+            "Yeah me too, all night. Really?!",
+            "How come we didn't cross paths?"
+        ],
+        "context_speakers": [
+            "RACHEL",
+            "JOEY",
+            "RACHEL"
+        ],
+        "show": "FRIENDS",
+        "sarcasm": false,
+        "gender": "M"
+    },
+    "2_431": {
+        "utterance": "I'm never gonna get to meet her anyway.",
+        "speaker": "JOEY",
+        "context": [
+            "But I can see through your sheet. Yeah, yeah, that's her. But y'know what? Doesn't matter,"
+        ],
+        "context_speakers": [
+            "JOEY"
+        ],
+        "show": "FRIENDS",
+        "sarcasm": false,
+        "gender": "M"
+    },
+    "1_6766": {
+        "utterance": "Maybe that's because I'm not being challenged. It's the same reason Einstein failed math.",
+        "speaker": "SHELDON",
+        "context": [
+            "And I'm super smart, so it's probably true.",
+            "Hey, I've been training in the field of neurobiology for 12 years.",
+            "You've been here for three hours, and you've spent one of them in the bathroom.",
+            "I'm sorry! It takes me a while to get things going on an unfamiliar toilet.",
+            "Sheldon, I've given you the simplest things to do, and you haven't done one of them right."
+        ],
+        "context_speakers": [
+            "SHELDON",
+            "AMY",
+            "AMY",
+            "SHELDON",
+            "AMY"
+        ],
+        "show": "BBT",
+        "sarcasm": false,
+        "gender": "M"
+    },
+    "1_4792": {
+        "utterance": "Obviously, we're no longer a Justice League. We have no choice but to switch to our Muppet Baby costumes.",
+        "speaker": "SHELDON",
+        "context": [
+            "I may have failed.",
+            "Okay, I guess we just go without a Wonder Woman.",
+            "I don't want to go without Penny.",
+            "Oh, great. No Superman, no Wonder Woman? All we've got is a skinny Flash, an Indian Aquaman, a nearsighted Green Lantern, and a teeny, tiny Dark Knight."
+        ],
+        "context_speakers": [
+            "SHELDON",
+            "HOWARD",
+            "PERSON",
+            "RAJ"
+        ],
+        "show": "BBT",
+        "sarcasm": false,
+        "gender": "M"
+    },
+    "2_218": {
+        "utterance": "Hey, does somebody wanna hand me one of those tiles.",
+        "speaker": "JOEY",
+        "context": [
+            "Have you seen Joey?",
+            "What's the matter?",
+            "Oh, just this!  Y'know what it's my fault really, because the couch is usually where we"
+        ],
+        "context_speakers": [
+            "CHANDLER",
+            "MONICA",
+            "CHANDLER"
+        ],
+        "show": "FRIENDS",
+        "sarcasm": false,
+        "gender": "M"
+    },
+    "2_446": {
+        "utterance": "I'd love to show ya, but I just tucked her in.",
+        "speaker": "JOEY",
+        "context": [
+            "Hi Joey.",
+            "Hey! How you doin'?",
+            "He has the most amazing Porsche under there!"
+        ],
+        "context_speakers": [
+            "PERSON",
+            "JOEY",
+            "PERSON"
+        ],
+        "show": "FRIENDS",
+        "sarcasm": false,
+        "gender": "M"
+    },
+    "2_134": {
+        "utterance": "Paper cut!",
+        "speaker": "CHANDLER",
+        "context": [
+            "I can't figure this out! It's so hard! Should I get her a  Tiffany cut or a Princess cut or a,ah-ah!"
+        ],
+        "context_speakers": [
+            "CHANDLER"
+        ],
+        "show": "FRIENDS",
+        "sarcasm": false,
+        "gender": "M"
+    },
+    "1_8417": {
+        "utterance": "Oh, I think we were looking at creepy in the rearview mirror when I put up that camera.",
+        "speaker": "HOWARD",
+        "context": [
+            "Roger is Raj.",
+            "I always thought, if I had a white name, it would be Gavin.",
+            "Keep reading. What does it say?",
+            "No, no, I don't know if I should. \nIf she wanted me to know about her blog, she would've told me.",
+            "It's almost like I'm reading her diary.",
+            "That's exactly what it's like. Keep reading.",
+            "No, this is creepy."
+        ],
+        "context_speakers": [
+            "HOWARD",
+            "RAJ",
+            "HOWARD",
+            "RAJ",
+            "RAJ",
+            "HOWARD",
+            "RAJ"
+        ],
+        "show": "BBT",
+        "sarcasm": false,
+        "gender": "M"
+    },
+    "2_131": {
+        "utterance": "I really don't wanna sit with Allen Iverson over there .",
+        "speaker": "CHANDLER",
+        "context": [
+            "Wish I could switch with someone."
+        ],
+        "context_speakers": [
+            "CHANDLER"
+        ],
+        "show": "FRIENDS",
+        "sarcasm": false,
+        "gender": "M"
+    },
+    "2_375": {
+        "utterance": "I was thkinking about maybe going into the Robot.",
+        "speaker": "ROSS",
+        "context": [
+            "Hey, you haven't been practising the routine have you?",
+            "No!"
+        ],
+        "context_speakers": [
+            "MONICA",
+            "ROSS"
+        ],
+        "show": "FRIENDS",
+        "sarcasm": false,
+        "gender": "M"
+    },
+    "1_3837": {
+        "utterance": "Excuse me, I'm thirsty, so I'm going to go to the refrigerator and get myself a refreshing beverage.",
+        "speaker": "SHELDON",
+        "context": [
+            "Oh, there it is: now that you don't have a girlfriend, you want to hang out with me again.",
+            "I never stopped hanging out with you. Oh, please, we all know I'm the friend you call when you have no other options. If we were the Justice League, I'd be Aquaman.",
+            "I wish you were Aquaman. Then I could send you to scoop my mom out of the old lady tank."
+        ],
+        "context_speakers": [
+            "RAJ",
+            "LEONARD",
+            "HOWARD"
+        ],
+        "show": "BBT",
+        "sarcasm": false,
+        "gender": "M"
+    },
+    "1_7341": {
+        "utterance": "I am talking to a man in space. If you don't have the (walkie-talkie static) then he might as well be at the Coffee Bean over on Lake Street.",
+        "speaker": "SHELDON",
+        "context": [
+            "You know, joking, kidding around, hurting feelings.",
+            "Okay, my turn. \nLet me talk to him.",
+            "Go ahead.",
+            "2311 North Los Robles Avenue, Pasadena, California to International Space Station.\nCan you read me? Over.",
+            "(imitates walkie-talkie static) Yes, I read you, Sheldon.",
+            "Copy that. Over. (imitates walkie-talkie static)",
+            "What are you doing?"
+        ],
+        "context_speakers": [
+            "HOWARD",
+            "SHELDON",
+            "LEONARD",
+            "SHELDON",
+            "HOWARD",
+            "SHELDON",
+            "LEONARD"
+        ],
+        "show": "BBT",
+        "sarcasm": false,
+        "gender": "M"
+    },
+    "1_1666": {
+        "utterance": "Would it work if I just punched you in the face?",
+        "speaker": "LEONARD",
+        "context": [
+            "it will establish you as the \"alpha\" male.",
+            "You see... when a female witnesses an exhibition of physical domination, she produces the hormone oxytocin.",
+            "If the two of you then engage in intercourse, this will create the biochemical reaction in the brain which lay people naively interpret as \"falling in love.\"",
+            "Huh"
+        ],
+        "context_speakers": [
+            "SHELDON",
+            "SHELDON",
+            "SHELDON",
+            "LEONARD"
+        ],
+        "show": "BBT",
+        "sarcasm": false,
+        "gender": "M"
+    },
+    "2_225": {
+        "utterance": "I don't know, something girlie.",
+        "speaker": "ROSS",
+        "context": [
+            "Really, I, no, I think girls night out is a great idea. Okay, okay, bye",
+            "So what are they doing?"
+        ],
+        "context_speakers": [
+            "ROSS",
+            "PHOEBE"
+        ],
+        "show": "FRIENDS",
+        "sarcasm": false,
+        "gender": "M"
+    },
+    "1_2669": {
+        "utterance": "What did you mean when you said you were going to miss me?",
+        "speaker": "LEONARD",
+        "context": [
+            "What time is it?",
+            "It's 7:00 a.m. I'm sorry it's early, but we're leaving soon, and I needed to talk to you."
+        ],
+        "context_speakers": [
+            "PENNY",
+            "LEONARD"
+        ],
+        "show": "BBT",
+        "sarcasm": false,
+        "gender": "M"
+    },
+    "2_371": {
+        "utterance": "I-I'm really sorry. It's just that I",
+        "speaker": "ROSS",
+        "context": [
+            "Hi umm, listen come here, come in. I'm so-so sorry about yesterday."
+        ],
+        "context_speakers": [
+            "ROSS"
+        ],
+        "show": "FRIENDS",
+        "sarcasm": false,
+        "gender": "M"
+    },
+    "2_8": {
+        "utterance": "It's white plastic, with a handle, and it fits onto a stroller.",
+        "speaker": "JOEY",
+        "context": [
+            "I'm doing research for a book, and I was wondering what someone might do if they left a baby on a city bus.",
+            "Hi, here's the deal. We lost a carseat on a bus today."
+        ],
+        "context_speakers": [
+            "CHANDLER",
+            "JOEY"
+        ],
+        "show": "FRIENDS",
+        "sarcasm": false,
+        "gender": "M"
+    },
+    "2_198": {
+        "utterance": "Yeah, she's fired.",
+        "speaker": "ROSS",
+        "context": [
+            "Was it my work? Were they mad? Was it Jack? Did he yell?!",
+            "J-j-just relax, nobody yelled. Jack just was calling to make sure that you were feeling better.",
+            "Thank God."
+        ],
+        "context_speakers": [
+            "PHOEBE",
+            "ROSS",
+            "PHOEBE"
+        ],
+        "show": "FRIENDS",
+        "sarcasm": false,
+        "gender": "M"
+    },
+    "2_51": {
+        "utterance": "Well, I believe the piece of furniture was fine until your little breakfast adventure with Angela Delvecchio",
+        "speaker": "CHANDLER",
+        "context": [
+            "That's the rule.",
+            "What rule? There's no rule, if anything, you owe me a table!",
+            "How'd you get to that?"
+        ],
+        "context_speakers": [
+            "JOEY",
+            "CHANDLER",
+            "JOEY"
+        ],
+        "show": "FRIENDS",
+        "sarcasm": false,
+        "gender": "M"
+    },
+    "2_441": {
+        "utterance": "He's right, even if it's to say something complementary.",
+        "speaker": "ROSS",
+        "context": [
+            "Oh.",
+            "Please, right now, no, every time I see him it's like  'Is it on the lose?'  'Is it watching me?'",
+            "We can't tell him, you can't go up to a guy you barely know and talk about his.... stuff."
+        ],
+        "context_speakers": [
+            "ROSS",
+            "PHOEBE",
+            "CHANDLER"
+        ],
+        "show": "FRIENDS",
+        "sarcasm": false,
+        "gender": "M"
+    }
+}
