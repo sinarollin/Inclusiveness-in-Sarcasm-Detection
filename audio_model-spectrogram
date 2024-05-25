@@ -1,0 +1,308 @@
+{
+ "cells": [
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": []
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 1,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "from functions_text_model import *\n",
+    "import os"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 2,
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "Current directory: c:\\Users\\celin\\OneDrive\\Documents\\EPFL\\MA2\\Deep learning\\Inclusivity-in-Sarcasm-Detection\n",
+      "Contents of current directory: ['.git', '.gitignore', 'audio-data-preparation.ipynb', 'audio-model-training.ipynb', 'augmented_labels.txt', 'data', 'dataclean.ipynb', 'functions_audio_model.py', 'functions_audio_model_tiny.py', 'functions_text_model.py', 'functions_video_model.py', 'hubert_base_online_tokenizer.ipynb', 'hyperparameter-tuning-audio.ipynb', 'hyperparameter-tuning-text.ipynb', 'hyperparameter_tuning', 'hyperparameter_tuning_text_context.ipynb', 'models', 'perfomance-comparison-with-gpt', 'README.md', 'requirements.txt', 'results', 'text-data-preparation.ipynb', 'text-model-evaluation.ipynb', 'text-model-training.ipynb', 'video-model-training.ipynb', '__pycache__']\n",
+      "c:\\Users\\celin\\OneDrive\\Documents\\EPFL\\MA2\\Deep learning\\Inclusivity-in-Sarcasm-Detection\\data\\F_data.json\n"
+     ]
+    }
+   ],
+   "source": [
+    "current_directory = os.getcwd()\n",
+    "print(\"Current directory:\", current_directory)\n",
+    "\n",
+    "contents = os.listdir(current_directory)\n",
+    "print(\"Contents of current directory:\", contents)\n",
+    "\n",
+    "#### Change the Dataset here when neccessary!\n",
+    "json_file_path = os.path.join(current_directory, 'data', 'F_data.json')\n",
+    "print(json_file_path)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 3,
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stderr",
+     "output_type": "stream",
+     "text": [
+      "c:\\Users\\celin\\anaconda3\\envs\\DLproj\\Lib\\site-packages\\tqdm\\auto.py:21: TqdmWarning: IProgress not found. Please update jupyter and ipywidgets. See https://ipywidgets.readthedocs.io/en/stable/user_install.html\n",
+      "  from .autonotebook import tqdm as notebook_tqdm\n"
+     ]
+    }
+   ],
+   "source": [
+    "from transformers import BertTokenizer\n",
+    "from torch.utils.data import Dataset, DataLoader\n",
+    "import json\n",
+    "from transformers import BertForSequenceClassification, BertTokenizer\n",
+    "from torch.optim import AdamW\n",
+    "from torch.utils.data import Dataset, DataLoader\n",
+    "import torch.nn as nn\n",
+    "from torch.utils.data import random_split\n",
+    "from sklearn.model_selection import ParameterGrid\n",
+    "\n",
+    "\n",
+    "# Load the BERT tokenizer\n",
+    "tokenizer = BertTokenizer.from_pretrained('bert-base-uncased', do_lower_case=True)\n",
+    "\n",
+    "# Function to encode the text\n",
+    "def encode_text(text):\n",
+    "    encoded_dict = tokenizer.encode_plus(\n",
+    "                        text,                      # Input text\n",
+    "                        add_special_tokens = True, # Add '[CLS]' and '[SEP]'\n",
+    "                        max_length = 64,           # Pad & truncate all sentences\n",
+    "                        truncation = True,\n",
+    "                        padding = 'max_length',\n",
+    "                        return_attention_mask = True,   # Construct attention masks\n",
+    "                        return_tensors = 'pt',     # Return pytorch tensors\n",
+    "                   )\n",
+    "    return encoded_dict['input_ids'], encoded_dict['attention_mask']\n",
+    "\n",
+    "# PyTorch Dataset\n",
+    "class SarcasmDataset(Dataset):\n",
+    "    def __init__(self, data):\n",
+    "        self.data = data\n",
+    "\n",
+    "    def __len__(self):\n",
+    "        return len(self.data)\n",
+    "\n",
+    "    def __getitem__(self, idx):\n",
+    "        item = self.data[idx]\n",
+    "        utterance = item['utterance']\n",
+    "        context = item['context']\n",
+    "        utterance_and_context = ' '.join([sentence for sentence in context] + [utterance]) # Combining the utterance and its context into one string.\n",
+    "        sarcasm = int(item['sarcasm'])\n",
+    "        input_ids, attention_mask = encode_text(utterance_and_context)\n",
+    "        return input_ids.flatten(), attention_mask.flatten(), sarcasm\n",
+    "    \n",
+    "# Create the DataLoader\n",
+    "# Load the data from the JSON file\n",
+    "with open(json_file_path) as f:\n",
+    "    data = json.load(f)\n",
+    "\n",
+    "# Convert the data to a list of dictionaries\n",
+    "data = list(data.values())\n",
+    "\n",
+    "dataset = SarcasmDataset(data)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 4,
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "train Loss: 0.6562,  ACC: 0.6921, F1-weighted: 0.6734\n"
+     ]
+    },
+    {
+     "name": "stderr",
+     "output_type": "stream",
+     "text": [
+      "100%|██████████| 4/4 [00:00<00:00, 42.28it/s]\n"
+     ]
+    },
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "eval Loss: 0.6626,  ACC: 0.7604, F1-weighted: 0.7485\n",
+      "Epoch 14\n",
+      "learning rate: 1e-05 batch size: 8 num_epochs: 20\n"
+     ]
+    },
+    {
+     "name": "stderr",
+     "output_type": "stream",
+     "text": [
+      " 33%|███▎      | 6/18 [00:00<00:00, 12.27it/s]\n"
+     ]
+    },
+    {
+     "ename": "KeyboardInterrupt",
+     "evalue": "",
+     "output_type": "error",
+     "traceback": [
+      "\u001b[1;31m---------------------------------------------------------------------------\u001b[0m",
+      "\u001b[1;31mKeyboardInterrupt\u001b[0m                         Traceback (most recent call last)",
+      "Cell \u001b[1;32mIn[4], line 79\u001b[0m\n\u001b[0;32m     77\u001b[0m \u001b[38;5;28mprint\u001b[39m(\u001b[38;5;124mf\u001b[39m\u001b[38;5;124m\"\u001b[39m\u001b[38;5;124mEpoch \u001b[39m\u001b[38;5;132;01m{\u001b[39;00mepoch\u001b[38;5;250m \u001b[39m\u001b[38;5;241m+\u001b[39m\u001b[38;5;250m \u001b[39m\u001b[38;5;241m1\u001b[39m\u001b[38;5;132;01m}\u001b[39;00m\u001b[38;5;124m\"\u001b[39m)\n\u001b[0;32m     78\u001b[0m \u001b[38;5;28mprint\u001b[39m(\u001b[38;5;124m'\u001b[39m\u001b[38;5;124mlearning rate:\u001b[39m\u001b[38;5;124m'\u001b[39m, params[\u001b[38;5;124m'\u001b[39m\u001b[38;5;124mlr\u001b[39m\u001b[38;5;124m'\u001b[39m], \u001b[38;5;124m'\u001b[39m\u001b[38;5;124mbatch size:\u001b[39m\u001b[38;5;124m'\u001b[39m, params[\u001b[38;5;124m'\u001b[39m\u001b[38;5;124mbatch_size\u001b[39m\u001b[38;5;124m'\u001b[39m], \u001b[38;5;124m'\u001b[39m\u001b[38;5;124mnum_epochs:\u001b[39m\u001b[38;5;124m'\u001b[39m, params[\u001b[38;5;124m'\u001b[39m\u001b[38;5;124mnum_epochs\u001b[39m\u001b[38;5;124m'\u001b[39m])\n\u001b[1;32m---> 79\u001b[0m train_loss, train_metrics \u001b[38;5;241m=\u001b[39m \u001b[43mtrain_epoch\u001b[49m\u001b[43m(\u001b[49m\u001b[43mmodel\u001b[49m\u001b[43m,\u001b[49m\u001b[43m \u001b[49m\u001b[43moptimizer\u001b[49m\u001b[43m,\u001b[49m\u001b[43m \u001b[49m\u001b[43mcriterion\u001b[49m\u001b[43m,\u001b[49m\u001b[43m \u001b[49m\u001b[43mmetrics\u001b[49m\u001b[43m,\u001b[49m\u001b[43m \u001b[49m\u001b[43mtrain_dataloader\u001b[49m\u001b[43m,\u001b[49m\u001b[43m \u001b[49m\u001b[43mdevice\u001b[49m\u001b[43m)\u001b[49m\n\u001b[0;32m     80\u001b[0m val_loss, val_metrics \u001b[38;5;241m=\u001b[39m evaluate(model, criterion, metrics, val_dataloader, device)\n\u001b[0;32m     82\u001b[0m \u001b[38;5;66;03m# Log the losses and metrics\u001b[39;00m\n",
+      "File \u001b[1;32mc:\\Users\\celin\\OneDrive\\Documents\\EPFL\\MA2\\Deep learning\\Inclusivity-in-Sarcasm-Detection\\functions_text_model.py:84\u001b[0m, in \u001b[0;36mtrain_epoch\u001b[1;34m(model, optimizer, criterion, metrics, dataloader, device)\u001b[0m\n\u001b[0;32m     81\u001b[0m loss \u001b[38;5;241m=\u001b[39m criterion(outputs\u001b[38;5;241m.\u001b[39mlogits, labels)\n\u001b[0;32m     83\u001b[0m \u001b[38;5;66;03m# Backward pass\u001b[39;00m\n\u001b[1;32m---> 84\u001b[0m \u001b[43mloss\u001b[49m\u001b[38;5;241;43m.\u001b[39;49m\u001b[43mbackward\u001b[49m\u001b[43m(\u001b[49m\u001b[43m)\u001b[49m\n\u001b[0;32m     86\u001b[0m torch\u001b[38;5;241m.\u001b[39mnn\u001b[38;5;241m.\u001b[39mutils\u001b[38;5;241m.\u001b[39mclip_grad_norm_(model\u001b[38;5;241m.\u001b[39mparameters(), \u001b[38;5;241m1\u001b[39m)   \u001b[38;5;66;03m# clip_grad_norm  = 1\u001b[39;00m\n\u001b[0;32m     88\u001b[0m \u001b[38;5;66;03m# Update the weights\u001b[39;00m\n",
+      "File \u001b[1;32mc:\\Users\\celin\\anaconda3\\envs\\DLproj\\Lib\\site-packages\\torch\\_tensor.py:525\u001b[0m, in \u001b[0;36mTensor.backward\u001b[1;34m(self, gradient, retain_graph, create_graph, inputs)\u001b[0m\n\u001b[0;32m    515\u001b[0m \u001b[38;5;28;01mif\u001b[39;00m has_torch_function_unary(\u001b[38;5;28mself\u001b[39m):\n\u001b[0;32m    516\u001b[0m     \u001b[38;5;28;01mreturn\u001b[39;00m handle_torch_function(\n\u001b[0;32m    517\u001b[0m         Tensor\u001b[38;5;241m.\u001b[39mbackward,\n\u001b[0;32m    518\u001b[0m         (\u001b[38;5;28mself\u001b[39m,),\n\u001b[1;32m   (...)\u001b[0m\n\u001b[0;32m    523\u001b[0m         inputs\u001b[38;5;241m=\u001b[39minputs,\n\u001b[0;32m    524\u001b[0m     )\n\u001b[1;32m--> 525\u001b[0m \u001b[43mtorch\u001b[49m\u001b[38;5;241;43m.\u001b[39;49m\u001b[43mautograd\u001b[49m\u001b[38;5;241;43m.\u001b[39;49m\u001b[43mbackward\u001b[49m\u001b[43m(\u001b[49m\n\u001b[0;32m    526\u001b[0m \u001b[43m    \u001b[49m\u001b[38;5;28;43mself\u001b[39;49m\u001b[43m,\u001b[49m\u001b[43m \u001b[49m\u001b[43mgradient\u001b[49m\u001b[43m,\u001b[49m\u001b[43m \u001b[49m\u001b[43mretain_graph\u001b[49m\u001b[43m,\u001b[49m\u001b[43m \u001b[49m\u001b[43mcreate_graph\u001b[49m\u001b[43m,\u001b[49m\u001b[43m \u001b[49m\u001b[43minputs\u001b[49m\u001b[38;5;241;43m=\u001b[39;49m\u001b[43minputs\u001b[49m\n\u001b[0;32m    527\u001b[0m \u001b[43m\u001b[49m\u001b[43m)\u001b[49m\n",
+      "File \u001b[1;32mc:\\Users\\celin\\anaconda3\\envs\\DLproj\\Lib\\site-packages\\torch\\autograd\\__init__.py:267\u001b[0m, in \u001b[0;36mbackward\u001b[1;34m(tensors, grad_tensors, retain_graph, create_graph, grad_variables, inputs)\u001b[0m\n\u001b[0;32m    262\u001b[0m     retain_graph \u001b[38;5;241m=\u001b[39m create_graph\n\u001b[0;32m    264\u001b[0m \u001b[38;5;66;03m# The reason we repeat the same comment below is that\u001b[39;00m\n\u001b[0;32m    265\u001b[0m \u001b[38;5;66;03m# some Python versions print out the first line of a multi-line function\u001b[39;00m\n\u001b[0;32m    266\u001b[0m \u001b[38;5;66;03m# calls in the traceback and some print out the last line\u001b[39;00m\n\u001b[1;32m--> 267\u001b[0m \u001b[43m_engine_run_backward\u001b[49m\u001b[43m(\u001b[49m\n\u001b[0;32m    268\u001b[0m \u001b[43m    \u001b[49m\u001b[43mtensors\u001b[49m\u001b[43m,\u001b[49m\n\u001b[0;32m    269\u001b[0m \u001b[43m    \u001b[49m\u001b[43mgrad_tensors_\u001b[49m\u001b[43m,\u001b[49m\n\u001b[0;32m    270\u001b[0m \u001b[43m    \u001b[49m\u001b[43mretain_graph\u001b[49m\u001b[43m,\u001b[49m\n\u001b[0;32m    271\u001b[0m \u001b[43m    \u001b[49m\u001b[43mcreate_graph\u001b[49m\u001b[43m,\u001b[49m\n\u001b[0;32m    272\u001b[0m \u001b[43m    \u001b[49m\u001b[43minputs\u001b[49m\u001b[43m,\u001b[49m\n\u001b[0;32m    273\u001b[0m \u001b[43m    \u001b[49m\u001b[43mallow_unreachable\u001b[49m\u001b[38;5;241;43m=\u001b[39;49m\u001b[38;5;28;43;01mTrue\u001b[39;49;00m\u001b[43m,\u001b[49m\n\u001b[0;32m    274\u001b[0m \u001b[43m    \u001b[49m\u001b[43maccumulate_grad\u001b[49m\u001b[38;5;241;43m=\u001b[39;49m\u001b[38;5;28;43;01mTrue\u001b[39;49;00m\u001b[43m,\u001b[49m\n\u001b[0;32m    275\u001b[0m \u001b[43m\u001b[49m\u001b[43m)\u001b[49m\n",
+      "File \u001b[1;32mc:\\Users\\celin\\anaconda3\\envs\\DLproj\\Lib\\site-packages\\torch\\autograd\\graph.py:744\u001b[0m, in \u001b[0;36m_engine_run_backward\u001b[1;34m(t_outputs, *args, **kwargs)\u001b[0m\n\u001b[0;32m    742\u001b[0m     unregister_hooks \u001b[38;5;241m=\u001b[39m _register_logging_hooks_on_whole_graph(t_outputs)\n\u001b[0;32m    743\u001b[0m \u001b[38;5;28;01mtry\u001b[39;00m:\n\u001b[1;32m--> 744\u001b[0m     \u001b[38;5;28;01mreturn\u001b[39;00m \u001b[43mVariable\u001b[49m\u001b[38;5;241;43m.\u001b[39;49m\u001b[43m_execution_engine\u001b[49m\u001b[38;5;241;43m.\u001b[39;49m\u001b[43mrun_backward\u001b[49m\u001b[43m(\u001b[49m\u001b[43m  \u001b[49m\u001b[38;5;66;43;03m# Calls into the C++ engine to run the backward pass\u001b[39;49;00m\n\u001b[0;32m    745\u001b[0m \u001b[43m        \u001b[49m\u001b[43mt_outputs\u001b[49m\u001b[43m,\u001b[49m\u001b[43m \u001b[49m\u001b[38;5;241;43m*\u001b[39;49m\u001b[43margs\u001b[49m\u001b[43m,\u001b[49m\u001b[43m \u001b[49m\u001b[38;5;241;43m*\u001b[39;49m\u001b[38;5;241;43m*\u001b[39;49m\u001b[43mkwargs\u001b[49m\n\u001b[0;32m    746\u001b[0m \u001b[43m    \u001b[49m\u001b[43m)\u001b[49m  \u001b[38;5;66;03m# Calls into the C++ engine to run the backward pass\u001b[39;00m\n\u001b[0;32m    747\u001b[0m \u001b[38;5;28;01mfinally\u001b[39;00m:\n\u001b[0;32m    748\u001b[0m     \u001b[38;5;28;01mif\u001b[39;00m attach_logging_hooks:\n",
+      "\u001b[1;31mKeyboardInterrupt\u001b[0m: "
+     ]
+    }
+   ],
+   "source": [
+    "torch.manual_seed(42)\n",
+    "    \n",
+    "# Set device\n",
+    "device = torch.device(\"cpu\")\n",
+    "\n",
+    "dropout_prob = 0\n",
+    "\n",
+    "# Define the hyperparameters to tune\n",
+    "param_grid = {\n",
+    "    'lr': [1e-4, 1e-5, 1e-6],\n",
+    "    'num_epochs': [20],\n",
+    "    'batch_size': [8, 16, 32, 64],\n",
+    "    'weight_decay': [0.05, 0.1, 0.2],\n",
+    "    'dropout_prob': [0, 0.1, 0.2]\n",
+    "}\n",
+    "\n",
+    "# Create a parameter grid\n",
+    "grid = ParameterGrid(param_grid)\n",
+    "\n",
+    "# Initialize a list to store the results\n",
+    "results = []\n",
+    "\n",
+    "# Define the size of the training set and the test set\n",
+    "train_size = int(0.7 * len(dataset))  # 70% of the data for training\n",
+    "val_size = int(0.15 * len(dataset))\n",
+    "test_size = len(dataset) - train_size - val_size  # 15% of the data for testing\n",
+    "\n",
+    "# Split the dataset\n",
+    "train_dataset, test_dataset, val_dataset = random_split(dataset, [train_size, test_size, val_size])\n",
+    "\n",
+    "# Save test dataset\n",
+    "torch.save(test_dataset, \"data/text_F_test_dataset.pt\")\n",
+    "\n",
+    "# For each combination of hyperparameters\n",
+    "for params in grid:\n",
+    "\n",
+    "    # Create the DataLoaders\n",
+    "    train_dataloader = DataLoader(train_dataset, batch_size=params['batch_size'])\n",
+    "    val_dataloader = DataLoader(val_dataset, batch_size=params['batch_size'])\n",
+    "\n",
+    "    # Create a new model\n",
+    "    model = BertForSequenceClassification.from_pretrained(\n",
+    "        \"prajjwal1/bert-tiny\",\n",
+    "        num_labels = 2,\n",
+    "        output_attentions = False,\n",
+    "        output_hidden_states = False,\n",
+    "    )\n",
+    "\n",
+    "    model.classifier = nn.Sequential(\n",
+    "        nn.Dropout(params['dropout_prob']),\n",
+    "        nn.Linear(in_features=128, out_features=64, bias=True),\n",
+    "        nn.Tanh(),\n",
+    "        nn.Linear(in_features=64, out_features=16, bias=True),\n",
+    "        nn.Tanh(),\n",
+    "        nn.Linear(in_features=16, out_features=2, bias=True)\n",
+    "    )\n",
+    "\n",
+    "    model.to(device)\n",
+    "\n",
+    "    # Create a new optimizer with the current learning rate\n",
+    "    optimizer = AdamW(model.parameters(), lr=params['lr'], weight_decay=params['weight_decay'])\n",
+    "\n",
+    "    # Create the optimizer  \n",
+    "    criterion = nn.CrossEntropyLoss()\n",
+    "\n",
+    "    # Define metrics\n",
+    "    metrics = {'ACC': acc, 'F1-weighted': f1}\n",
+    "\n",
+    "    # Initialize lists to store losses and metrics\n",
+    "    train_loss_log, test_loss_log = [], []\n",
+    "    metrics_names = list(metrics.keys())\n",
+    "    train_metrics_log = [[] for _ in range(len(metrics))]\n",
+    "    test_metrics_log = [[] for _ in range(len(metrics))]\n",
+    "\n",
+    "    # Train and evaluate the model for the current number of epochs\n",
+    "    for epoch in range(params['num_epochs']):\n",
+    "        print(f\"Epoch {epoch + 1}\")\n",
+    "        print('learning rate:', params['lr'], 'batch size:', params['batch_size'], 'num_epochs:', params['num_epochs'])\n",
+    "        train_loss, train_metrics = train_epoch(model, optimizer, criterion, metrics, train_dataloader, device)\n",
+    "        val_loss, val_metrics = evaluate(model, criterion, metrics, val_dataloader, device)\n",
+    "\n",
+    "        # Log the losses and metrics\n",
+    "        train_loss_log.append(train_loss)\n",
+    "        test_loss_log.append(val_loss)\n",
+    "        train_metrics_log = update_metrics_log(metrics_names, train_metrics_log, train_metrics)\n",
+    "        test_metrics_log = update_metrics_log(metrics_names, test_metrics_log, val_metrics)\n",
+    "\n",
+    "    # Store the results\n",
+    "    results.append({\n",
+    "        'lr': params['lr'],\n",
+    "        'batch_size': params['batch_size'],\n",
+    "        'num_epochs': params['num_epochs'],\n",
+    "        'weight_decay': params['weight_decay'],\n",
+    "        'dropout_prob': params['dropout_prob'],\n",
+    "        'eval_loss': val_loss,\n",
+    "        'eval_metrics': val_metrics\n",
+    "    })\n",
+    "\n",
+    "    # Plot and save the training and testing metrics\n",
+    "    plot_filename = f'results/plot_lr_{params[\"lr\"]}_bs_{params[\"batch_size\"]}_wd_{params[\"weight_decay\"]}_dp_{params[\"dropout_prob\"]}.png'\n",
+    "    plot_training_hyperparameters(train_loss_log, test_loss_log, metrics_names, train_metrics_log, test_metrics_log, plot_filename)\n",
+    "\n",
+    "# Save the results to a JSON file\n",
+    "results_path = 'results/text_hyperparameter_F.json'\n",
+    "os.makedirs(os.path.dirname(results_path), exist_ok=True)\n",
+    "\n",
+    "with open(results_path, 'w') as f:\n",
+    "    json.dump(results, f, indent=4)\n",
+    "\n",
+    "print(results)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": []
+  }
+ ],
+ "metadata": {
+  "kernelspec": {
+   "display_name": "DLproj",
+   "language": "python",
+   "name": "python3"
+  },
+  "language_info": {
+   "codemirror_mode": {
+    "name": "ipython",
+    "version": 3
+   },
+   "file_extension": ".py",
+   "mimetype": "text/x-python",
+   "name": "python",
+   "nbconvert_exporter": "python",
+   "pygments_lexer": "ipython3",
+   "version": "3.11.9"
+  }
+ },
+ "nbformat": 4,
+ "nbformat_minor": 2
+}

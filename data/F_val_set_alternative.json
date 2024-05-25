@@ -1,0 +1,384 @@
+{
+    "1_11232": {
+        "utterance": "And I love that I work and do all the cleaning, and you're okay with that.",
+        "speaker": "BERNADETTE",
+        "context": [
+            "And I love that you're strong and independent.",
+            "And yet, I still love when you hold a door for me.",
+            "I love that I'm kind of a slob around here, and...\nyou're okay with that.",
+            "Uh-huh."
+        ],
+        "context_speakers": [
+            "HOWARD",
+            "BERNADETTE",
+            "HOWARD",
+            "BERNADETTE"
+        ],
+        "show": "BBT",
+        "sarcasm": true,
+        "gender": "F"
+    },
+    "1_70": {
+        "utterance": "I don't think I'll be able to stop thinking about it.",
+        "speaker": "PENNY",
+        "context": [
+            "This is one of my favorite places to kick back after a quest. They have a great house ale.",
+            "Cool tiger.",
+            "Yeah, I've had him since level ten.",
+            "His name is Buttons.",
+            "Anyway, if you had your own game character we could hang out, maybe go on a quest.",
+            "That sounds interesting.",
+            "You'll think about it?"
+        ],
+        "context_speakers": [
+            "HOWARD",
+            "PENNY",
+            "HOWARD",
+            "HOWARD",
+            "HOWARD",
+            "PENNY",
+            "HOWARD"
+        ],
+        "show": "BBT",
+        "sarcasm": true,
+        "gender": "F"
+    },
+    "2_611": {
+        "utterance": "Just tell me how.",
+        "speaker": "RACHEL",
+        "context": [
+            "Why?!!",
+            "Uh well umm .. we're just not in that place, y'know? But we're very excited about this.",
+            "Oh. Well then shut me up."
+        ],
+        "context_speakers": [
+            "PERSON",
+            "ROSS",
+            "PERSON"
+        ],
+        "show": "FRIENDS",
+        "sarcasm": true,
+        "gender": "F"
+    },
+    "2_126": {
+        "utterance": "No I am upset because Joe Piscapo didn't get the lead role in rain man.",
+        "speaker": "DOROTHY",
+        "context": [
+            "No rose.",
+            "Are you upset because Blanche is going to sell the house and we can't live together."
+        ],
+        "context_speakers": [
+            "DOROTHY",
+            "ROSE"
+        ],
+        "show": "GOLDENGIRLS",
+        "sarcasm": true,
+        "gender": "F"
+    },
+    "2_135": {
+        "utterance": "No, she I supset because Jimmy Swaager can't cover his motel bill",
+        "speaker": "DOROTHY",
+        "context": [
+            "But I am still upset.",
+            "Are you upset because you don't know what to do about Al?"
+        ],
+        "context_speakers": [
+            "ROSE",
+            "BLANCHE"
+        ],
+        "show": "GOLDENGIRLS",
+        "sarcasm": true,
+        "gender": "F"
+    },
+    "1_5496": {
+        "utterance": "Okay, Amy, you're being silly. I'm not concerned about who hangs out with who. And I certainly don't have a problem with Leonard's new girlfriend who wears way too much makeup. Ooh, these are cute. Of course if I buy them, I'll have to rent my womb out to a gay couple.",
+        "speaker": "PENNY",
+        "context": [
+            "That bitch is crafty.",
+            "You think?",
+            "Of course. How does the cheetah attack a herd of wildebeests? By going after its weakest member.",
+            "Well, what makes me the weakest member?",
+            "Your trusting nature coupled with your teeny-tiny body. You wouldn't last a minute on the Serengeti."
+        ],
+        "context_speakers": [
+            "AMY",
+            "BERNADETTE",
+            "AMY",
+            "BERNADETTE",
+            "AMY"
+        ],
+        "show": "BBT",
+        "sarcasm": true,
+        "gender": "F"
+    },
+    "2_398": {
+        "utterance": "Rose, you should sit here and watch her hack herself to death",
+        "speaker": "DOROTHY",
+        "context": [
+            "ma I think you should sit down",
+            "Dorothy, should I get Sophia a glass of water?"
+        ],
+        "context_speakers": [
+            "DOROTHY",
+            "ROSE"
+        ],
+        "show": "GOLDENGIRLS",
+        "sarcasm": true,
+        "gender": "F"
+    },
+    "1_8717": {
+        "utterance": "Because you're in the right lane behind a bus and you won't go around it? I'm sure she finds it charming.",
+        "speaker": "BERNADETTE",
+        "context": [
+            "Do you think Penny's mad at me?"
+        ],
+        "context_speakers": [
+            "LEONARD"
+        ],
+        "show": "BBT",
+        "sarcasm": true,
+        "gender": "F"
+    },
+    "1_11439": {
+        "utterance": "No, you're right, we should do what you do. Have our mom send us pants from the Walmart in Houston.",
+        "speaker": "PENNY",
+        "context": [
+            "This isn't so bad.",
+            "That's easy for you to say. \nYour chair's not facing the lingerie section.",
+            "Boy, that's a lot of panties.",
+            "You guys comfy? This might take a while.",
+            "You know, I don't understand why women insist on making a big production out of buying clothes."
+        ],
+        "context_speakers": [
+            "LEONARD",
+            "SHELDON",
+            "SHELDON",
+            "AMY",
+            "SHELDON"
+        ],
+        "show": "BBT",
+        "sarcasm": true,
+        "gender": "F"
+    },
+    "2_440": {
+        "utterance": "No its not big, not at all. Kind of the same lines as, I don't know, having a third nipple!",
+        "speaker": "MONICA",
+        "context": [
+            "You are dead meat",
+            "I didn't know it was a big secret."
+        ],
+        "context_speakers": [
+            "MONICA",
+            "CHANDLER"
+        ],
+        "show": "FRIENDS",
+        "sarcasm": true,
+        "gender": "F"
+    },
+    "2_527": {
+        "utterance": "We thought you were just here for the company. He is a sarcasmoholic Stewart.",
+        "speaker": "MEMBER-GIRL",
+        "context": [
+            "My name's Scott and I am a sarcasmholic.",
+            "Nooo."
+        ],
+        "context_speakers": [
+            "SCOTT",
+            "MEMBER-GIRL"
+        ],
+        "show": "SARCASMOHOLICS",
+        "sarcasm": true,
+        "gender": "F"
+    },
+    "2_27": {
+        "utterance": "No no, you don't have to fly back, really.",
+        "speaker": "MONICA",
+        "context": [
+            "Yeah, Ross is great. He's uh, he's in a whole other place. No, he's gone."
+        ],
+        "context_speakers": [
+            "MONICA"
+        ],
+        "show": "FRIENDS",
+        "sarcasm": false,
+        "gender": "F"
+    },
+    "1_11201": {
+        "utterance": "He probably got a new one. Finish your breakfast. Look, there's an entire section of my dashboard that doesn't have any syrup on it.",
+        "speaker": "AMY",
+        "context": [
+            "It's nice they're getting exercise.",
+            "Although now that I think about it, Leonard would never go swimming in public without his swim shirt.",
+            "I'm sure he brought it.",
+            "No, but last year, at Magic Mountain, he got such a bad sunburn, we had to cut him out of it.",
+            "He probably got a new one. Finish your breakfast."
+        ],
+        "context_speakers": [
+            "AMY",
+            "SHELDON",
+            "AMY",
+            "SHELDON",
+            "AMY"
+        ],
+        "show": "BBT",
+        "sarcasm": false,
+        "gender": "F"
+    },
+    "2_28": {
+        "utterance": "Carol called me to thank me for the lasagna, I asked, she told me.",
+        "speaker": "MONICA",
+        "context": [
+            "I mean, I couldn't not know, I mean, if, if the doctor knows, and Carol knows, and Susan knows.... And Monica knows\u2026",
+            "Wha, heh, how could you know, I don't even know!"
+        ],
+        "context_speakers": [
+            "RACHEL",
+            "ROSS"
+        ],
+        "show": "FRIENDS",
+        "sarcasm": false,
+        "gender": "F"
+    },
+    "1_7443": {
+        "utterance": "We've kind of been involved in a five-year experiment.",
+        "speaker": "PENNY",
+        "context": [
+            "in town were starting to say I was a witch.",
+            "Sheldon thinks the approach in this paper might change the way we calculate ferromagnetic hysteresis.",
+            "Oh, it's about time. I hated the old way.",
+            "Hi. I'm Penny.",
+            "Alex.\nUh, do you work with Dr. Hofstadter?",
+            "In a way."
+        ],
+        "context_speakers": [
+            "SHELDON",
+            "PERSON",
+            "PENNY",
+            "PENNY",
+            "PERSON",
+            "PENNY"
+        ],
+        "show": "BBT",
+        "sarcasm": false,
+        "gender": "F"
+    },
+    "1_10009": {
+        "utterance": "Let the dead man talk. So, why do you think that?",
+        "speaker": "PENNY",
+        "context": [
+            "FYI, we plan on selling out the human race hard.",
+            "In 20 years, who knows what'll happen with any of us?",
+            "I think you and Leonard will be together.",
+            "You do?",
+            "Yeah.\nI think you're the best couple I know.",
+            "That's so sweet.",
+            "What the hell?! Excuse me?",
+            "Ah-da-da-da-da!"
+        ],
+        "context_speakers": [
+            "AMY",
+            "PENNY",
+            "PERSON",
+            "PENNY",
+            "PERSON",
+            "PENNY",
+            "AMY",
+            "PENNY"
+        ],
+        "show": "BBT",
+        "sarcasm": false,
+        "gender": "F"
+    },
+    "2_445": {
+        "utterance": "Okay?",
+        "speaker": "PHOEBE",
+        "context": [
+            "Okay, here's what we're gonna do. Okay, I'm gonna break into this mini-van and put it in neutral. You guys push it forward so Ross can drive out of his spot."
+        ],
+        "context_speakers": [
+            "PHOEBE"
+        ],
+        "show": "FRIENDS",
+        "sarcasm": false,
+        "gender": "F"
+    },
+    "2_590": {
+        "utterance": "Yeah, I don't think so Joe.",
+        "speaker": "RACHEL",
+        "context": [
+            "Uhh, well I've got an audition down the street and I spilled sauce all over the front of my shirt.  You got an extra one?",
+            "Yeah, sure. Umm .. here.",
+            "Great.  You got anything that's not"
+        ],
+        "context_speakers": [
+            "JOEY",
+            "RACHEL",
+            "JOEY"
+        ],
+        "show": "FRIENDS",
+        "sarcasm": false,
+        "gender": "F"
+    },
+    "2_300": {
+        "utterance": "I don't think you could ever do that.",
+        "speaker": "PHOEBE",
+        "context": [
+            "There is nothing wrong with Jake! Okay? He is all man! I'm thinking even more than you.",
+            "Oh yeah, he looked like a real lumberjack in those pink lacys.",
+            "I'm just saying that only a man completely secure with his masculinity could walk around in women's underwear!"
+        ],
+        "context_speakers": [
+            "PHOEBE",
+            "JOEY",
+            "PHOEBE"
+        ],
+        "show": "FRIENDS",
+        "sarcasm": false,
+        "gender": "F"
+    },
+    "2_196": {
+        "utterance": "What?",
+        "speaker": "PHOEBE",
+        "context": [
+            "Oh, I mean she's gonna be at the wedding waiting for him and people will be whispering, \"Oh that poor girl.\" Then she'll have to come back here and live all alone.",
+            "Oh my God!"
+        ],
+        "context_speakers": [
+            "RACHEL",
+            "PHOEBE"
+        ],
+        "show": "FRIENDS",
+        "sarcasm": false,
+        "gender": "F"
+    },
+    "2_79": {
+        "utterance": "I'm just gonna throw it out, it's probably just a bunch of shampoo and...",
+        "speaker": "RACHEL",
+        "context": [
+            "Oh, great. Although I did sit down where there wasn't a chair.",
+            "By the way, Ross dropped by a box of your stuff.",
+            "Oh, well, I guess I had that one coming."
+        ],
+        "context_speakers": [
+            "RACHEL",
+            "MONICA",
+            "RACHEL"
+        ],
+        "show": "FRIENDS",
+        "sarcasm": false,
+        "gender": "F"
+    },
+    "2_458": {
+        "utterance": "What are you up too?",
+        "speaker": "MONICA",
+        "context": [
+            "Yeah! And also, a little like a French guy. I never noticed that before."
+        ],
+        "context_speakers": [
+            "JOEY"
+        ],
+        "show": "FRIENDS",
+        "sarcasm": false,
+        "gender": "F"
+    }
+}
