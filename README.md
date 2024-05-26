@@ -37,7 +37,7 @@ The audio was extracted from the videos provided in the original dataset and was
 This step was done in the file `text-model-training.ipynb`. For the text sarcasm detection we used a tinyBERT model. Three models were trained this way: one female data only, one on male data only and one on mixed data. 
 
 #### Audio Model
-This step was done in the file `audio_embeddings_training.ipynb`. For the audio sarcasm detection we used a Wav2Vec2 model. Three models were trained this way: one female data only, one on male data only and one on mixed data. 
+This step was done in the file `audio_embeddings_model.ipynb`. For the audio sarcasm detection we used a Wav2Vec2 model. Three models were trained this way: one female data only, one on male data only and one on mixed data. 
 
 #### Model Evaluation
 This step was done in the files `text-model-evaluation.ipynb` and `audio_embeddings_training.ipynb`. To test all our models we assessed their performance on three different datasets: female data only, male data only and mixed data. We used accuracy, loss and F1 score. 
