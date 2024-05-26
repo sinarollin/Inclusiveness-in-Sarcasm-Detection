@@ -23,7 +23,14 @@ You can then install all of the necessary packages at once, using the following 
 
 ### Data 📈
 
-We used the publicly available [MUStARD dataset for multi-modal sarcasm detection](https://github.com/soujanyaporia/MUStARD), which contains text, audio and video data from multiple TV sitcoms. The data includes the *utterance of interest*, *context*, *speaker*, and *sarcasm label*. The data was manually annotated to include the *gender* of the speaker, and all utterances for which the speakers’ gender was unclear were removed. Three datasets were created, one containing only female utterances, one containing only male utterances and the final one containing both. These datasets were balanced to ensure the inclusion of the same amount of sarcastic and non-sarcastic utterances for each gender by data augmentation. 
+We used the publicly available [MUStARD dataset for multi-modal sarcasm detection](https://github.com/soujanyaporia/MUStARD), which contains text, audio and video data from multiple TV sitcoms. The data includes the *utterance of interest*, *context*, *speaker*, and *sarcasm label*. The data was manually annotated to include the *gender* of the speaker, and all utterances for which the speakers’ gender was unclear were removed. Three datasets were created, one containing only female utterances, one containing only male utterances and the final one containing both. These datasets were balanced to ensure the inclusion of the same amount of sarcastic and non-sarcastic utterances for each gender by data augmentation.
+
+#### Note for Audio Data
+As the spectrograms as well as the embeddings are too large even in compressed form, they can be found in the following [Googe Drive folder](https://drive.google.com/drive/folders/1-sEyHQU6l0RqNHKS0toeIE2pDIAtDssL?usp=sharing).
+
+#### Note for the Video Data
+The videos from the original MUStARD dataset can be accessed in a [Google Drive folder](https://drive.google.com/file/d/1i9ixalVcXskA5_BkNnbR60sqJqvGyi6E/view?usp=sharing).
+
 
 ### Methods 📚
 
@@ -41,7 +48,3 @@ This step was done in the file `audio_embeddings_model.ipynb`. For the audio sar
 
 #### Model Evaluation
 This step was done in the files `text-model-evaluation.ipynb` and `audio_embeddings_training.ipynb`. To test all our models we assessed their performance on three different datasets: female data only, male data only and mixed data. We used accuracy, loss and F1 score. 
-
-
-#### Note for Audio Data:
-As the spectrograms as well as the embeddings are too large even in compressed form, they can be found on the following site: https://drive.google.com/drive/folders/1-sEyHQU6l0RqNHKS0toeIE2pDIAtDssL?usp=sharing.

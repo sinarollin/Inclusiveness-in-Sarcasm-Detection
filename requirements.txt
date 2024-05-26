@@ -30,3 +30,4 @@ timm
 soundfile
 tensorflow
 keras
+os
