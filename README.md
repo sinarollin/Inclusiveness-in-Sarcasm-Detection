@@ -27,14 +27,11 @@ We used the publicly available [MUStARD dataset for multi-modal sarcasm detectio
 
 ### Methods 📚
 
-#### Audio Extraction
-This step was done in the file `audio_embeddings_data_preparation_1.ipynb`, `audio_embeddings_data_preparation_2.ipynb`. The audio was extracted from the videos provided in the original dataset and  was then transformed to a waveform format in order to produce embeddings for the model input.
-
 #### Text Data Augmentation
 This step was done in the file `text-data-preparation.ipynb`. The data augmentation for the text utterances was performed using synonym replacement. Synonyms for verbs, adjectives or pronouns were extracted from WordNet based on a similarity of $> 0.6$. 
 
-#### Audio Data Augmentation
-This step was done in the file `audio_embeddings_data_preparation_1.ipynb` and `audio_embeddings_data_preparation_2.ipynb`. The data augmentation for the audio samples was performed in two different ways: by lowering the pitch of chosen samples and by introducing a certain level of noise to the audio waveforms.
+#### Audio Data Augmentation and Extraction
+The audio was extracted from the videos provided in the original dataset and was then transformed to a waveform format in order to produce embeddings for the model input. These were done in the file `audio_embeddings_data_preparation_1.ipynb` and `audio_embeddings_data_preparation_2.ipynb`. The data augmentation for the audio samples was performed in two different ways: by lowering the pitch of chosen samples and by introducing a certain level of noise to the audio waveforms.
 
 #### Text Model
 This step was done in the file `text-model-training.ipynb`. For the text sarcasm detection we used a tinyBERT model. Three models were trained this way: one female data only, one on male data only and one on mixed data. 
