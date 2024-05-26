@@ -44,3 +44,7 @@ This step was done in the file `audio-model-training.ipynb`. For the audio sarca
 
 #### Model Evaluation
 This step was done in the files `text-model-evaluation.ipynb` and `[...]`. To test all our models we assessed their performance on three different datasets: female data only, male data only and mixed data. We used accracy, loss and F1 score. 
+
+
+#### Note for Audio Data:
+As the spectrograms as well as the embeddings are too large even in compressed form, they can be found on the following site: https://drive.google.com/drive/folders/1-sEyHQU6l0RqNHKS0toeIE2pDIAtDssL?usp=sharing.
