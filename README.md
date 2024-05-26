@@ -43,4 +43,4 @@ This step was done in the file `text-model-training.ipynb`. For the text sarcasm
 This step was done in the file `audio-model-training.ipynb`. For the audio sarcasm detection we used a Wav2Vec2 model. Three models were trained this way: one female data only, one on male data only and one on mixed data. 
 
 #### Model Evaluation
-This step was done in the files `text-model-training.ipynb` and `[...]`. To test all our models we assessed their performance on three different datasets: female data only, male data only and mixed data. We used accracy, loss and F1 score. 
+This step was done in the files `text-model-evaluation.ipynb` and `[...]`. To test all our models we assessed their performance on three different datasets: female data only, male data only and mixed data. We used accracy, loss and F1 score. 
