@@ -1,10 +1,10 @@
 #Authors: Céline Hirsch, Sandra Frey, Sina Röllin
 #Deep Learning Project: Inclusiveness in Sarcasm Detection
 
-# This file contains the functions to train and evaluate the text model that is based on the BERT model.
+# This file contains the functions to train and evaluate the text model that is based on the tiny BERT model.
 # The functions can be used to train the model, evaluate it and display its metrics.
 
-
+#These functions are loosely based on the functions seen in class (Deep Learning - EE-559).
 
 # Importing the necessary libraries
 import numpy as np

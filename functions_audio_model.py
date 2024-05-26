@@ -1,8 +1,11 @@
-# #Authors: Céline Hirsch, Sandra Frey, Sina Röllin
-# #Deep Learning Project: Inclusiveness in Sarcasm Detection
+# Authors: Céline Hirsch, Sandra Frey, Sina Röllin
+# Deep Learning Project: Inclusiveness in Sarcasm Detection
 
-# # This file contains the functions to train and evaluate the audio model that is based on the Beit model.
-# # The functions can be used to train the model, evaluate it and display its metrics.
+# This file contains the functions to train and evaluate the audio model that is based on the Beit model.
+# The functions can be used to train the model, evaluate it and display its metrics.
+
+
+# These functions are loosely based on the functions seen in class (Deep Learning - EE-559).
 
 
 # Importing the necessary libraries
@@ -51,37 +54,17 @@ def train_epoch(model, optimizer, criterion, metrics, dataloader, device):
         inputs, labels = batch
         inputs = inputs.float().to(device)
         labels = labels.to(device)
-        # print("BATCH1")
-        # print(inputs.shape)
 
         inputs = torch.squeeze(inputs, dim=1)
-        # print("BATCH2")
-        # print(inputs.shape)
+
 
         optimizer.zero_grad()  # Zero the gradients
 
-        #inputs = inputs.view(inputs.shape[0], -1)
-        #inputs = inputs.squeeze(1)
-        # Forward pass
         outputs = model(inputs)
-        # print("out")
-        # print(outputs)
-    
 
 
-        ####
-        # If the model returns a tuple, take the first element as the output
-        # if isinstance(outputs, tuple):
-        #     outputs = outputs[0]
-
-        ####
-
-        # Compute loss
-        # print("labels")
-        # print(labels)
         loss = criterion(outputs, labels)
-        # print("loss")
-        # print(loss)
+
         # Backward pass
         loss.backward()
 
@@ -103,9 +86,9 @@ def train_epoch(model, optimizer, criterion, metrics, dataloader, device):
     for k in epoch_metrics.keys():
         epoch_metrics[k] /= len(dataloader)
 
-    #clear_output() #clean the prints from previous epochs
-    # print('train Loss: {:.4f}, '.format(epoch_loss),
-    #       ', '.join(['{}: {:.4f}'.format(k, epoch_metrics[k]) for k in epoch_metrics.keys()]))
+    clear_output() #clean the prints from previous epochs
+    print('train Loss: {:.4f}, '.format(epoch_loss),
+          ', '.join(['{}: {:.4f}'.format(k, epoch_metrics[k]) for k in epoch_metrics.keys()]))
 
 
     return epoch_loss, epoch_metrics
@@ -146,17 +129,10 @@ def evaluate(model, criterion, metrics, dataloader, device):
             inputs, labels = batch
             inputs = inputs.float().to(device) 
             labels = labels.to(device)
-
             inputs = torch.squeeze(inputs, dim=1)
-            #inputs = inputs.squeeze(1)
-            #inputs = inputs.view(inputs.shape[0], -1)
 
             # Forward pass
             outputs = model(inputs)
-
-            # # If the model returns a tuple, take the first element as the output
-            # if isinstance(outputs, tuple):
-            #     outputs = outputs[0]
 
             # Compute loss
             loss = criterion(outputs, labels)
@@ -180,8 +156,8 @@ def evaluate(model, criterion, metrics, dataloader, device):
     for k in epoch_metrics.keys():
         epoch_metrics[k] /= len(dataloader)
     
-    # print('eval Loss: {:.4f}, '.format(epoch_loss),
-    #       ', '.join(['{}: {:.4f}'.format(k, epoch_metrics[k]) for k in epoch_metrics.keys()]))
+    print('eval Loss: {:.4f}, '.format(epoch_loss),
+          ', '.join(['{}: {:.4f}'.format(k, epoch_metrics[k]) for k in epoch_metrics.keys()]))
 
 
     return epoch_loss, epoch_metrics

@@ -1,10 +1,18 @@
+#Authors: Céline Hirsch, Sandra Frey, Sina Röllin
+#Deep Learning Project: Inclusiveness in Sarcasm Detection
+
+
+#This file contains all the requirements in packages for this project.
+
+
 #Creating a virtual environment: conda create -n DLproj python=3.11 
-#command for pip installation for all the packages in this file:
+#To install all the packages needed run the following command in the terminal in your chosen virtual environment:
 #pip install -r requirements.txt
 
 numpy
 pandas
 torch
+torchaudio
 transformers
 matplotlib
 scikit-learn
@@ -19,3 +27,6 @@ fairseq
 nltk
 torchvision
 timm
+soundfile
+tensorflow
+keras
